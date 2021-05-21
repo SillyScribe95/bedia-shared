@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+  <head>
+  <!-- Place this code here in the <head> of the email -->
+  </head>
+  <meta charset="utf-8" />
+    <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting" />
+    <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta
+      name="format-detection"
+      content="telephone=no,address=no,email=no,date=no,url=no"
+    />
+    <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light" />
+    <meta name="supported-color-schemes" content="light" />
+    <title></title>
+    <!--   The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+      <style>
+        * {
+          font-family: sans-serif !important;
+        }
+      </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+    <!-- CSS Reset : BEGIN -->
+    <!-- 1style 1class -->
+    <style>
+    
+
+    
+.bold {
+  font-weight: bold;
+}
+
+/* 1highlight */
+mark {
+  padding: 1px;
+  background-color: red;
+  /* background-color: HotPink; */
+}
+
+.italics {
+  font-style: italic;
+}
+
+.shadowHover {
+  /* padding: 5px; */
+  transition: 0.01s;
+}
+.shadowHover:hover {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.02);
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.wrapTrue {
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: nowrap;
+}
+
+.regardso {
+  padding: 15px 0;
+  /* width: 100%; */
+}
+
+.bedBeforeList {
+  padding-right: 5px;
+}
+.bedAfterList {
+  /* text-align: 5px; */
+  text-decoration: none;
+  font-size: 14px;
+}
+.bedTabList {
+  /* padding: 0 50px; */
+  /* width: 100%; */
+  vertical-align: baseline;
+}
+.bedList,
+.bedList div:before {
+  margin: 0 0 10px 30px;
+}
+
+.mainBackDiv {
+  font-family: sans-serif;
+  color: #222222;
+  padding: 60px 0;
+  /* background: rgb(0,22,77); */
+}
+
+.main {
+  background: #ffffff;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.content-block {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.footer {
+  clear: both;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  color: #999999;
+}
+.footer td,
+.footer p,
+.footer span,
+.footer a {
+}
+
+.bediaMark,
+.bediaMark a:link,
+.bediaMark a:visited,
+.bediaMark a:hover,
+.bediaMark a:active {
+  font-family: sans-serif;
+  text-decoration: none;
+  background: rgb(0, 22, 77);
+  color: #ffffff;
+}
+.bediaText {
+  color: blue;
+  /* color: rgb(0, 22, 77); */
+}
+
+.footer .emailTitle {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.emailBody {
+  margin: 0;
+  padding: 0 !important;
+  font-family: sans-serif;
+  mso-line-height-rule: exactly;
+}
+
+.emailButton {
+  font-size: 26px;
+  line-height: 23px;
+  min-width: 20px;
+  text-decoration: none;
+  padding: 15px 37px;
+  margin: 10px 0px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.emailButDiv {
+  /* transition: all 100ms ease-in; */
+  text-align: center;
+  padding: 0 25px;
+}
+
+.bedialink,
+.bedialink a:link,
+.bedialink a:visited,
+.bedialink a:hover,
+.bedialink a:active {
+  color: black;
+}
+@media screen and (max-width: 600px) {
+  /* What it does: Adjust typography on small screens to improve readability */
+  .email-container p {
+    font-size: 17px !important;
+  }
+}
+/* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+:root {
+  color-scheme: light;
+  supported-color-schemes: light;
+}
+
+/* What it does: Remove spaces around the email design added by some email clients. */
+/* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+html,
+body {
+  margin: 0 auto !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.selectable-selectbox {
+  z-index: 9000;
+  position: absolute;
+  cursor: default;
+  background: none;
+  border: 1px dashed grey;
+}
+
+/* What it does: Stops email clients resizing small text. */
+* {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* What it does: Centers email on Android 4.4 */
+div[style*="margin: 16px 0"] {
+  margin: 0 !important;
+}
+
+/* What it does: forces Samsung Android mail clients to use the entire viewport */
+#MessageViewBody,
+#MessageWebViewDiv {
+  width: 100% !important;
+}
+
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+table,
+td {
+  mso-table-lspace: 0pt !important;
+  mso-table-rspace: 0pt !important;
+}
+
+/* What it does: Fixes webkit padding issue. */
+table {
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+  table-layout: fixed !important;
+  margin: 0 auto !important;
+}
+
+/* What it does: Uses a better rendering method when resizing images in IE. */
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+a {
+  text-decoration: none;
+}
+
+/* What it does: A work-around for email clients meddling in triggered links. */
+a[x-apple-data-detectors],  /* iOS */
+  .unstyle-auto-detected-links a,
+  .aBn {
+  border-bottom: 0 !important;
+  cursor: default !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+.a6S {
+  display: none !important;
+  opacity: 0.01 !important;
+}
+
+/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+.im {
+  color: inherit !important;
+}
+
+/* If the above doesn't work, add a .g-img class to any image in question. */
+img.g-img + div {
+  display: none !important;
+}
+
+/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+/* Create one of these media queries for each additional viewport size you'd like to fix */
+
+/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+  u ~ div .email-container {
+    min-width: 320px !important;
+  }
+}
+/* iPhone 6, 6S, 7, 8, and X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+  u ~ div .email-container {
+    min-width: 375px !important;
+  }
+}
+/* iPhone 6+, 7+, and 8+ */
+@media only screen and (min-device-width: 414px) {
+  u ~ div .email-container {
+    min-width: 414px !important;
+  }
+}
+
+
+
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+  <!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+  <body
+    width="100%"
+    class="emailBody"
+  >
+    <center
+      role="article"
+      aria-roledescription="email"
+      lang="en"
+    >
+      <!-- <div
+        style="
+          display: none;
+          font-size: 1px;
+          line-height: 1px;
+          max-height: 0px;
+          max-width: 0px;
+          opacity: 0;
+          overflow: hidden;
+          mso-hide: all;
+          font-family: sans-serif;
+        "
+      >
+        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+      </div> -->
+      <!-- Preview Text Spacing Hack : END -->
+      <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.
+            2. MSO tags for Desktop Windows Outlook enforce a 600px width.
+        -->
+        <div 
+      style=
+      "max-width: 600px; 
+      margin: 0 auto;"
+       class="email-container">
+        <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600">
+            <tr>
+            <td>
+            <![endif]-->
+        <!-- Email Body : BEGIN -->
+        <table
+          align="center"
+          role="presentation"
+          cellspacing="0"
+          cellpadding="0"
+          border="0"
+          width="100%"
+          style="margin: auto;"
+        >
+          <!-- src="https://via.placeholder.com/200x50"   -->
+          <!-- src="https://drive.google.com/uc?id=1qpZsDhV8kfQ0vWLqaXFMRT93mDeykFsA" -->
+          <!-- src="https://drive.google.com/uc?id=1BOpOsfGSFdhmB5gh7NBTPpG4hfVmMUop" -->
+          <!-- Email Header : BEGIN -->
+          <!-- width="200"
+          height="70" -->
+          <!-- alt="alt_text" -->
+          <tr>
+            <td class="bediaMark" 
+            
+            style="padding: 20px 0;
+                  margin: 20px 0; 
+                background: rgb(0, 22, 77);
+                color: #ffffff;
+                text-align: center;"
+            >
+              <!-- 1image -->
+              <a href="https://bedia.tv/">
+                <img
+                  src="https://drive.google.com/uc?id=1Ke8aKG0ZShAGUju3s9rClQibpWFk9HYB"
+                  width="120"
+                  height="50"                  
+                  border="0"
+                />
+              </a>
+            </td>
+          </tr>
+          
+          <tr>
+            <td class="mainBackDiv">
+                      <!-- 1body 1const 1email -->
+                      <div><div class="mainEmDiv" style="padding:0 2%;font-size:20px"><div style="padding:100px 0 20px;font-size:20px">Brian, Andrew replied to your message on Bedia.</div><div style="border-radius:5px;font-size:20px;padding:20px 10px;margin:20px 10px;text-align:center;border:1px solid rgb(0,22,77, 1);background:#F3F3F3"><div style="font-family:Calibri;color:black;text-decoration:" class=""><div style="color:black;font-weight:bold">🙋 Andrew (Alpha Scribe)</div><div style="font-family:Calibri;color:black;text-decoration:;font-size:0.8em">✔️ 100% accuracy, 54 jobs</div></div><div style="padding:0 5%;text-align:left"><hr/>Hi Brian! Have you had the chance to look at my messages? I&#x27;d be happy to transcribe and subtitle your videos for $0.5 a minute.<br/><br/>When would you like to start from? I&#x27;ve prepared a potential list of your interviews from the past week; you can add/remove more videos directly from your channel and add details about each of them.<br/><br/>I&#x27;ll send you the text and subtitle files as soon as I&#x27;m finished. If there are any unclear references, I can double-check them with you beforehand so the files are 100% accurate.<br/><br/>Let me know if you have any other questions!</div></div><div style="margin:25px 0;text-align:center">↓ ↓ ↓<a href="https://bedia.tv/order?id=d4684b09d2"><div class="bediaMark pointer" obj="Andrew&#x27;s Order" style="background:rgb(0, 22, 77);color:#ffffff;font-size:26px;min-width:20px;text-decoration:none;padding:15px 7px;margin:10px 0px;text-align:center;border-radius:4px">Andrew&#x27;s Order</div></a>↑ ↑ ↑</div><div style="margin:25px 0;text-align:left"><div class="regardso">Regards,<br/>The Bedia Team</div></div></div><div class="mainEmFooter"></div></div>
+
+                      
+                    </td>
+          </tr>
+            
+
+        </table>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <!-- Email Body : END -->
+
+        <!-- Email 1Footer : BEGIN -->
+
+        
+        <!-- START FOOTER -->
+            <div class="footer italics">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="content-block">
+                    <a href="https://bedia.tv/">
+                    <span class="apple-link">The fastest, easiest way to get transcripts and subtitles.</span>
+                    <br><br/> 
+                    - Bedia Inc -
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="content-block powered-by">
+                    Made with a 😊 by <a href="https://happy-devs.github.io/">Happy Devs.</a>.
+                  </td> -->
+                </tr>
+              </table>
+            </div>
+            <!-- END FOOTER -->
+
+        
+        <!-- Email Footer : END -->
+
+      <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+  </center>
+</body>
+</html>
