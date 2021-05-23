@@ -22,8 +22,8 @@ export function userSignOut(...saew) {
 }
 
 export function getItemUser(obj) {
-  const okawe = obj?.userID;
-  const dfrwqe = okawe ? okawe : obj?.userObj?.id;
+  const okawe = obj.userID;
+  const dfrwqe = okawe ? okawe : obj.userObj && obj.userObj.id;
 
   return dfrwqe;
 }
@@ -96,13 +96,13 @@ export function getusedeets(useo) {
 }
 
 export function getObjUser(obj) {
-  const { data } = getDocModel(indexUser, obj?.userID);
+  const { data } = getDocModel(indexUser, obj.userID);
   return data;
 }
 
 export function getUserName(obj) {
   // let kasew = obj?.firstname  && obj?.lastname
   // return kasew ?  :
-  return obj?.username;
+  return obj.username;
   // return obj?.username;
 }

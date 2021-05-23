@@ -183,11 +183,11 @@ function ModelNote(typeofunc, { typevar, ...asdokwe }) {
 
 export function getModelMeta(obj) {
   const iasae = getParamVar(linkuseNameProvide);
-  const emojBaseo = joinString(obj?.emoji);
+  const emojBaseo = joinString(obj.emoji);
 
   let titlBase =
     //
-    iasae ? iasae : obj?.name;
+    iasae ? iasae : obj.name;
 
   const metaBase =
     //
@@ -285,16 +285,19 @@ export function addKnowledge(...sawe) {
 export async function modelSubmit(
   typeos,
   ijdsfe,
-  { currentUser, checkUser, ...saewe }
+  { userObj, checkUser, ...saewe }
 ) {
   // saveUserTopic(topic);
 
   const oksad = ijdsfe.id;
 
-  let sidjwe = currentUser?.id;
+  let sidjwe = userObj && {
+    userID: userObj.id
+  }
+
 
   ijdsfe = removeEmptyDict({
-    userID: sidjwe,
+    ...sidjwe,
     ...ijdsfe,
   });
 

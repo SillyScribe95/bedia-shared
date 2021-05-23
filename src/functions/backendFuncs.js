@@ -65,7 +65,7 @@ export function GetUserObjs(typeos, useos, saodkwe) {
   return filtModel(
     typeos,
     "userID",
-    useos?.id,
+    useos.id,
     saodkwe
     // sdofkr
     // user
@@ -229,7 +229,7 @@ export function changeHighWatch(highvar, uservar) {
   const jase =
     //
     // highvar
-    highvar.media?.id;
+highvar.media &&  highvar.media.id;
 
   const endio =
     //

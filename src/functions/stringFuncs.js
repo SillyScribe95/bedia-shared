@@ -16,3 +16,10 @@ export function joinString(arrayo, strngo = "", first = "") {
 
   return okasd;
 }
+
+export const getExtString = (sdfweq) => {
+  var re = /(?:\.([^.]+))?$/;
+  var ext = re.exec(sdfweq)[1];
+
+  return ext;
+};

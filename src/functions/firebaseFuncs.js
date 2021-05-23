@@ -419,7 +419,7 @@ export async function FireModel({
       idjeq("___ FUREBASE ADD DATA aaaaa ___", dataoi);
 
       let sfdokewe = {
-        id: dataoi?.id,
+        id: dataoi.id,
         ...sdofer,
       };
 
@@ -518,7 +518,7 @@ function asokdwe(sdfoker) {
 
   let ew9r = sdfoker.get();
   let saod = {
-    id: sdfoker?.id,
+    id: sdfoker.id,
     ...ew9r,
     // ...sdfoker,
   };

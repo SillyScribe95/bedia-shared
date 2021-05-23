@@ -86,7 +86,7 @@ export function modelLink(typevar, sadowqke, typeslu) {
   const okdsre = ijsawe[typevar];
   typevar = okdsre ? okdsre : typevar;
 
-  let sadowe = sadowqke?.id;
+  let sadowe = sadowqke && sadowqke.id;
   const ksaew = typeslu ? `/${typeslu}` : "";
   let osakde = `/${typevar}/${sadowe}${ksaew}`;
 

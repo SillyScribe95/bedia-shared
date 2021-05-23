@@ -20,6 +20,8 @@ export * from "./functions/globalFuncs";
 export * from "./functions/pageFuncs";
 export * from "./functions/timeFuncs";
 export * from "./functions/stringFuncs";
+export * from "./functions/bookFuncs";
+export * from "./functions/chromeFuncs";
 export * from "./functions/emojiFuncs";
 export * from "./functions/notionFuncs";
 export * from "./functions/userFuncs";
