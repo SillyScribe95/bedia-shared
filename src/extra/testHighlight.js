@@ -5,7 +5,6 @@ import { testNotData } from "./testNotion";
 import { testMedia } from "./testMedia";
 
 export const testHighlight = {
-  media: testMedia,
   id: "asdokexxoaksadOAa",
   slugURL: "asokdqwe",
   speakers: ["", ""],
@@ -62,3 +61,8 @@ export const swedsfew = getEnchancedArray([
 ]);
 
 logs.logga("___ swedsfew ___", swedsfew);
+
+export const testHighlightMedia = {
+  ...testHighlight,
+  media: testMedia,
+};

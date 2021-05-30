@@ -1,4 +1,4 @@
-export async function getMediaInfo({ link, name }) {
+export async function getMediaLink({ link, name }) {
   let extInfo = "";
 
   const osdker = getExtString(link);

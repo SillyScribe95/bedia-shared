@@ -4,6 +4,7 @@ import {
   fireLogin,
   fireRegister,
   firesignoutFunc,
+  FireUser,
 } from "./firebaseFuncs";
 import * as logs from "./logFuncs";
 import { getDocModel } from "./modelFuncs";
@@ -13,12 +14,11 @@ import { getSlugName } from "./globalFuncs";
 
 export function userConnect(...asds) {
   //
-
   fireConnect(...asds);
 }
 
-export function userSignOut(...saew) {
-  firesignoutFunc(...saew);
+export function userSignOut(saew) {
+  firesignoutFunc(saew);
 }
 
 export function getItemUser(obj) {
@@ -105,4 +105,12 @@ export function getUserName(obj) {
   // return kasew ?  :
   return obj.username;
   // return obj?.username;
+}
+
+export function getUser(...obj) {
+  const iksawe =
+    //
+    FireUser(...obj);
+
+  return iksawe;
 }

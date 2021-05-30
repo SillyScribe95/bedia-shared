@@ -1,34 +1,14 @@
-// import "firebase/firestore";
-// import * as auth from "firebase/auth";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+
 import * as logs from "./logFuncs";
 import { ModelCatch } from "./modelFuncs";
 import { addFuncsUse, creatUseAfter } from "./userFuncs";
 import { getDataBase } from "./backendFuncs";
 import { turnarray } from "./arrayFuncs";
-// import UseFirestoreQuery from "./firestoreFuncs";
 
-// <!-- The core Firebase JS SDK is always required and must be listed first -->
-// <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-
-// <!-- TODO: Add SDKs for Firebase products that you want to use
-//      https://firebase.google.com/docs/web/setup#available-libraries -->
-// <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
-
-// <script>
-//   // Your web app's Firebase configuration
-//   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-//   var firebaseConfig = {
-
-//   };
-//   // Initialize Firebase
-//   firebase.initializeApp(firebaseConfig);
-//   firebase.analytics();
-// </script>
-
-var firebaseConfig = {
+var config = {
   apiKey: "AIzaSyCTNAVPnCcrNJV1wEzObL-Ky6UGvUeuZMU",
   authDomain: "test-bediab.firebaseapp.com",
   projectId: "test-bediab",
@@ -38,38 +18,47 @@ var firebaseConfig = {
   measurementId: "G-4WV7DT0V17",
 };
 
-firebase.initializeApp(firebaseConfig);
-let autho =
+firebase.initializeApp(config);
+
+export function fireInit(config) {
   //
-  firebase.auth();
-const db = firebase.firestore();
-
-// logs.logga("___funcs GO firebase ___", firebase);
-
-export function getFirestore() {
-  return db;
+  firebase.initializeApp(config);
 }
 
-function getAuth(messo) {
-  let adwe = firebase.auth();
+function fireMain(fireObj) {
+  // return fireObj;
+  return firebase;
+}
+
+export function getFirestore() {
+  return firebase.firestore();
+}
+
+function getAuth(fireObj) {
+  let adwe = fireMain(fireObj).auth();
 
   logs.logga(messo + "___ getAuth ___", adwe);
 
   return adwe;
 }
 
-export function FireUser(funtion) {
+export function FireUser(fireObj) {
   // const use =
   const [user, loading, error] =
     //
-    firebase.auth();
+    "";
+  // firebase.auth();
   // firebase.auth().onAuthStateChanged()
   // getAuth("userSign");
   // useAuthState(firebase.auth());
 
+  logs.loggo("___fireUser fireObj ___", fireObj);
+
   const BaseRRue =
     //
-    user;
+    // user;
+    // firebase.auth().currentUser;
+    fireMain(fireObj).auth().currentUser;
   // awiejw;
   // awiejw?.currentUser;
   // getFirstArr(user);
@@ -87,15 +76,19 @@ export function FireUser(funtion) {
 
   let skmae = BaseRRue && fireRet(BaseRRue);
 
-  const oaksda = {
-    data: skmae,
-    loading: loading,
-    error: error,
-  };
+  const oaksda =
+    //
+    skmae;
+  // BaseRRue
+  // {
+  //   data: skmae,
+  //   loading: loading,
+  //   error: error,
+  // };
 
-  logs.logga("___ FireUser ___", {
-    BaseRRue: BaseRRue,
-    skmae: skmae,
+  logs.loggo("___ FireUser ___", {
+    BASIC: BaseRRue,
+    EXPAND: skmae,
   });
 
   return oaksda;
@@ -103,22 +96,14 @@ export function FireUser(funtion) {
 }
 
 // 1signout
-export function firesignoutFunc() {
+export function firesignoutFunc({ funcvar, errorFunc }) {
   let dsofkes =
     //
     "";
   // firebase.auth().GoogleAuthProvider();
   // .signInWithPopup(dsofkes)
 
-  firebase
-    .auth()
-    .signOut()
-    .then(() => {
-      // Sign-out successful.
-    })
-    .catch((error) => {
-      // An error happened.
-    });
+  fireMain().auth().signOut().then(funcvar).catch(errorFunc);
 }
 
 export function loginPop() {
@@ -186,32 +171,30 @@ export function errCreate(params, funcvar) {
 }
 
 export function fireRegister(email, password, { funcvar, errorFunc }) {
-  autho
+  getAuth()
     .createUserWithEmailAndPassword(email, password)
     .then(creatUseAfter)
     .catch(errorFunc);
 }
 
 export function fireLogin(email, password, { funcvar, errorFunc }) {
-  autho
+  getAuth()
     .signInWithEmailAndPassword(email, password)
     .then(creatUseAfter)
     .catch(errorFunc);
 }
 
-export function fireConnect(typeVar, funcvar) {
-  //   getAuth();
-
+export function fireConnect(typeVar, { funcvar, fireObj }) {
   let dsofkes = "";
   switch (typeVar) {
     case "google":
-      dsofkes = new firebase.auth.GoogleAuthProvider();
+      dsofkes = new fireMain(fireObj).auth.GoogleAuthProvider();
       break;
     case "facebook":
-      dsofkes = new firebase.auth.FacebookAuthProvider();
+      dsofkes = new fireMain(fireObj).auth.FacebookAuthProvider();
       break;
     case "twitter":
-      dsofkes = new firebase.auth.TwitterAuthProvider();
+      dsofkes = new fireMain(fireObj).auth.TwitterAuthProvider();
       break;
     // case "instagram":
     //     dsofkes = new firebase.auth.TwitterAuthProvider();
@@ -220,17 +203,17 @@ export function fireConnect(typeVar, funcvar) {
     default:
   }
 
-  function aokdw(sdfew) {
-    creatUseAfter(sdfew, funcvar);
+  function aokdw(userBase) {
+    // creatUseAfter(userBase, funcvar);
+    funcvar(userBase);
   }
 
-  autho.signInWithPopup(dsofkes).then(aokdw).catch(errCreate);
+  fireMain(fireObj)
+    .auth()
+    .signInWithPopup(dsofkes)
+    .then(aokdw)
+    .catch(errCreate);
 }
-
-// db.settings({
-//   timestampsInSnapshots: true,
-// });
-// export function get
 
 export async function fireEdit({
   typevar,
@@ -255,7 +238,6 @@ export async function fireEdit({
     switch (sdfgre) {
       case "array":
         endValue = firebase.firestore.FieldValue.arrayUnion(valuevar);
-        // endValue = db.FieldValue.apply(this, myArray);
 
         // firebase.firestore.FieldValue.arrayUnion.apply(this, myArray)
         break;
@@ -534,6 +516,7 @@ export function getFire({
   wherevar = "==",
   whereDict,
   valuevar,
+  storeObj,
   docvar,
   //
   //
@@ -580,7 +563,8 @@ export function getFire({
 
   logs.logga(messvar + "___ gFIre AAAA ___", saidwqe);
 
-  let sfdgre = db.collection(typevar);
+  const sdiewqeq = storeObj ? storeObj : getFirestore();
+  let sfdgre = sdiewqeq.collection(typevar);
 
   function filtWhere(xcasdwv, dfae) {
     for (const [key, value] of Object.entries(dfae)) {

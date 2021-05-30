@@ -3,6 +3,7 @@ import {
   getFirestore,
   getFire,
   fireEdit,
+  fireInit,
   FireUser,
   getMapFire,
 } from "./firebaseFuncs";
@@ -22,6 +23,14 @@ import * as logs from "./logFuncs";
 
 //
 //
+export function backendInit(typevar, config, { fireObj }) {
+  switch (typevar) {
+    case "firebase":
+    // fireObj.initializeApp(config);
+    // fireObj.analytics();
+  }
+}
+
 export function editBase(typevar, idvar, tyope) {
   const ijwsdf = {
     typevar: typevar,
@@ -139,7 +148,6 @@ export function filtModelDocs(dfgewr, idlist, asodwe) {
   const ijasw = {
     keyvar: "uid",
     valuevar: idlist,
-
     ...asodwe,
   };
 
@@ -229,7 +237,7 @@ export function changeHighWatch(highvar, uservar) {
   const jase =
     //
     // highvar
-highvar.media &&  highvar.media.id;
+    highvar.media && highvar.media.id;
 
   const endio =
     //
