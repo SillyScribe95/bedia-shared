@@ -1,3 +1,5 @@
+import { testMedia } from "./testMedia";
+
 const bookio = {
   link: "https://www.nothuman.net/images/files/discussion/2/1815b71a2e633176b1c509f3a186605b.pdf",
   name: "a game of thrones",
@@ -19,4 +21,52 @@ export const testLink = {
   audio: sdifjew,
   video: vjewre,
   youtube: vjewre,
+};
+
+const sidjr = {
+  fullWidth: "100%",
+};
+
+// 1savepanel
+
+const nsiase = [
+  //
+  "",
+];
+
+const sdjiwre = {
+  fontSize: "20px",
+};
+
+const sdfrae = {
+  listvar: nsiase,
+  itemConfig: sdjiwre,
+};
+
+const sdifjewr = {
+  // name: ""
+  // speaker:
+  ...testMedia,
+};
+
+const dfigret = {
+  name: "Current",
+  media: sdifjewr,
+  quote: "Another one comes undene.",
+  id: "sdokqweqsad",
+  slugURL: "eqwas213",
+};
+
+function changeHigh(valda) {
+  //
+}
+
+export const textHighChrome = {
+  noSave: true,
+  modelStage: "save",
+  overObj: dfigret,
+  onSubmit: changeHigh,
+  savePanelTrue: true,
+  savePanelConfig: sdfrae,
+  buttonConfig: sidjr,
 };

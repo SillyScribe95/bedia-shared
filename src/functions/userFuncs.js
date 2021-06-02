@@ -101,10 +101,9 @@ export function getObjUser(obj) {
 }
 
 export function getUserName(obj) {
-  // let kasew = obj?.firstname  && obj?.lastname
+  // let kasew = obj.firstname  && obj.lastname
   // return kasew ?  :
   return obj.username;
-  // return obj?.username;
 }
 
 export function getUser(...obj) {

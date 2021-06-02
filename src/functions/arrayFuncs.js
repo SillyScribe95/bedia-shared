@@ -36,7 +36,32 @@ export function turnarray(arrVary, extraPush) {
   return arrVary;
 }
 
-export function mapFunc(arrVar, funcVar, limit) {
+export function mapFuncDict(arrVar, funcVar, dictvar) {
+  function hereo(obj, indexvar) {
+    const obrar = dictvar ? dictvar[obj] : obj;
+
+    const vkbmdfs =
+      //
+      // "opkcwqe";
+      funcVar ? funcVar(obrar) : obrar;
+
+    return vkbmdfs;
+  }
+  //
+
+  const asudjwe =
+    //
+    // "asodkaewqe";
+    arrVar.map(hereo);
+
+  return asudjwe;
+}
+
+export function mapListDict(arrvar, dictvar) {
+  return mapFuncDict(arrvar, "", dictvar);
+}
+
+export function mapFunc(arrVar, funcVar, dictvar) {
   function hereo(obj, indexvar) {
     const obrar =
       //
@@ -53,7 +78,7 @@ export function mapFunc(arrVar, funcVar, limit) {
     const vkbmdfs =
       //
       // "opkcwqe";
-      funcVar(ijadw);
+      funcVar ? funcVar(ijadw) : ijadw;
 
     return vkbmdfs;
   }
@@ -213,17 +238,19 @@ export function mapSelectEnd(odsfe, asdfer) {
   return sdore;
 }
 
-export function mapSelectValue(arrBig) {
+export function mapSelectValue(arrBig, { dictvar, labelFunc, valueFunc }) {
   function asijdwe(asdae) {
+    const ndsire = dictvar ? dictvar[asdae] : asdae;
+
     let sakde = {
-      label: asdae,
-      value: asdae,
+      label: labelFunc ? labelFunc(ndsire) : asdae,
+      value: valueFunc ? valueFunc(ndsire) : asdae,
     };
 
     return sakde;
   }
 
-  return arrBig && arrBig.map(asijdwe);
+  return arrBig.map(asijdwe);
 }
 
 // 1map

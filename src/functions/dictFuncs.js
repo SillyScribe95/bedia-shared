@@ -1,4 +1,5 @@
 import * as logs from "./logFuncs";
+import { joinString } from "./stringFuncs";
 
 export function turnDict(dictvar) {
   return Object.entries(dictvar);
@@ -10,6 +11,34 @@ export function mapDictAttr(obj, dictvar) {
   }
 
   return obj;
+}
+
+export function mapDictNew(dictvar, nqeo) {
+  const iase = {};
+  for (const [key, value] of Object.entries(dictvar)) {
+    const sdoeae = {
+      ...value,
+      ...nqeo,
+    };
+    iase[key] = sdoeae;
+  }
+
+  return iase;
+}
+
+export function mapDictAttrToString(listvar, join, dictvar) {
+  const okasasd = listvar.map((asda) => dictvar[asda]);
+
+  logs.loggo("___ okasasd ___", okasasd);
+
+  const ofkew = joinString(okasasd, join);
+
+  logs.loggo("___ mapDictAttrToString ___", {
+    ARRAY: okasasd,
+    JOINED: ofkew,
+  });
+
+  return ofkew;
 }
 
 export function removeEmptyDict(obj) {

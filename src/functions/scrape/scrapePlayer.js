@@ -4,7 +4,7 @@ import * as logs from "../logFuncs";
 export function getCurrTime(player) {
   // if
   let playRo = getPlayVar();
-  let endTime = playRo?.currentTime;
+  let endTime = playRo && playRo.currentTime;
 
   let sdifkjer = {
     playRo: playRo,
@@ -17,7 +17,7 @@ export function getCurrTime(player) {
 }
 
 export function checkPlaying(playRef) {
-  let pausTrue = playRef?.paused;
+  let pausTrue = playRef && playRef.paused;
   return !pausTrue;
 }
 

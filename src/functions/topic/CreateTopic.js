@@ -39,7 +39,7 @@ export default async function CreateTopic(sdfew, currentUser) {
 
     // let toppoDat = toplist ? toplist[idoeUse] : "";
     // let toppoBase = toplist ? toplist.idoeUse : "";
-    // let counto = toppoDat?.count;
+    // let counto = toppoDat.count;
     // let updateCount = counto ? counto + 1 : 1;
 
     // let objNew = {

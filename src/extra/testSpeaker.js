@@ -54,6 +54,7 @@ export const andrewSp = {
   slugURL: "sillyscribe",
   name: "Andrew Maguire (sillyScribe)",
 };
+
 // 1speaker
 export const allVdeo = "allVideos";
 const speakerDict = {

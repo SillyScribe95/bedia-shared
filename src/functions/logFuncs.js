@@ -6,13 +6,13 @@ export function logga(messageIt, valY) {
   // logs.logga(messageIt, valY);
 }
 
-export function loggo(messageIt, valY, ...asw) {
-  console.log("loggo--", messageIt, valY, ...asw);
+export function loggo(...asw) {
+  console.log("loggo--", ...asw);
   // logs.logga('logs.logga:', logs.logga)
 }
 
-export function logge(messageIt, valY, ...asw) {
-  console.log("loggo--", messageIt, valY, ...asw);
+export function logge(...asw) {
+  console.log("loggo--", ...asw);
   // logs.logga('logs.logga:', logs.logga)
 }
 

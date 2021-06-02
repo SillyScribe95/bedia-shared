@@ -28,7 +28,7 @@ export function changeWebPlayerTime(timeo, playRef) {
 }
 
 export function checkPlaying(playRef) {
-  let pausTrue = playRef?.paused;
+  let pausTrue = playRef && playRef.paused;
   return !pausTrue;
 }
 
