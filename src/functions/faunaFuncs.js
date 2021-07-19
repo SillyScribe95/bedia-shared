@@ -1,287 +1,287 @@
-import * as logs from "./logFuncs";
+// import * as logs from "./logFuncs";
 
-var faunadb = require("faunadb"),
-  q = faunadb.query;
+// var faunadb = require("faunadb"),
+//   q = faunadb.query;
 
-var faunadb = require("faunadb");
-var serverClient = new faunadb.Client({
-  secret: "fnAEIh8pDDACAaB14O6PimK--HVab9Ua9g5C67f9",
-});
+// var faunadb = require("faunadb");
+// var serverClient = new faunadb.Client({
+//   secret: "fnAEIh8pDDACAaB14O6PimK--HVab9Ua9g5C67f9",
+// });
 
-export function renderFauna(typevar, { data, ...asdwe }) {
-  data = {
-    typevar: typevar,
-    ...data,
-  };
+// export function renderFauna(typevar, { data, ...asdwe }) {
+//   data = {
+//     typevar: typevar,
+//     ...data,
+//   };
 
-  logs.logga("___ renderFauna AAA ___", {
-    DATA: data,
-    OTHER: asdwe,
-  });
+//   logs.logga("___ renderFauna AAA ___", {
+//     DATA: data,
+//     OTHER: asdwe,
+//   });
 
-  return data;
-}
+//   return data;
+// }
 
-export function addFauna() {}
+// export function addFauna() {}
 
-export function createFauna(typevar, { id, addArgs }, { funcvar }) {
-  let dsfdas = id ? q.Collection(typevar, id) : q.Collection(typevar);
+// export function createFauna(typevar, { id, addArgs }, { funcvar }) {
+//   let dsfdas = id ? q.Collection(typevar, id) : q.Collection(typevar);
 
-  const itemCre = q.Create(q.Ref(dsfdas), { data: addArgs });
+//   const itemCre = q.Create(q.Ref(dsfdas), { data: addArgs });
 
-  logs.logga("___ createFauna", {
-    serverClient: serverClient,
-    itemCre: itemCre,
-  });
+//   logs.logga("___ createFauna", {
+//     serverClient: serverClient,
+//     itemCre: itemCre,
+//   });
 
-  serverClient.query(itemCre).then((ret) => funcvar(renderFauna(typevar, ret)));
-}
+//   serverClient.query(itemCre).then((ret) => funcvar(renderFauna(typevar, ret)));
+// }
 
-export function updateFauna(refvar, { id, addArgs }, { docvar, funcvar }) {
-  //
-  const iasde = q.Update(refvar, { data: addArgs });
+// export function updateFauna(refvar, { id, addArgs }, { docvar, funcvar }) {
+//   //
+//   const iasde = q.Update(refvar, { data: addArgs });
 
-  serverClient.query(iasde).then((ret) => funcvar(renderFauna(typevar, ret)));
-}
+//   serverClient.query(iasde).then((ret) => funcvar(renderFauna(typevar, ret)));
+// }
 
-export async function getFauna({ boolvar, boolTrue, ...sdewq }) {
-  let kosade = boolTrue
-    ? boolvar && (await faunBase(sdewq))
-    : await faunBase(sdewq);
+// export async function getFauna({ boolvar, boolTrue, ...sdewq }) {
+//   let kosade = boolTrue
+//     ? boolvar && (await faunBase(sdewq))
+//     : await faunBase(sdewq);
 
-  // let kosade = faunRet(sdewq)
-  // kosade = {
-  //     ...kosade,
-  //     ...kosade?.data
-  // }
+//   // let kosade = faunRet(sdewq)
+//   // kosade = {
+//   //     ...kosade,
+//   //     ...kosade?.data
+//   // }
 
-  // logs.logga("getFauna--", sdewq)
-  // return ""
-  return serverClient.query(kosade);
-  // return faunBase(sdewq)
-}
+//   // logs.logga("getFauna--", sdewq)
+//   // return ""
+//   return serverClient.query(kosade);
+//   // return faunBase(sdewq)
+// }
 
-// 1filtmodel
-export async function faunBase({
-  typevar,
-  keyvar,
-  multidocs,
-  // WHERE
-  wherevar = "==",
-  whereDict,
-  valuevar,
-  docvar,
-  //
-  //
-  logtrue,
-  messvar = "",
-  funcvar,
-  boolvar,
-  boolTrue,
-  limitvar,
-  addTrue,
-  orderTrue,
-  orderDateTrue,
-  orderType,
-}) {
-  // 1getfire
+// // 1filtmodel
+// export async function faunBase({
+//   typevar,
+//   keyvar,
+//   multidocs,
+//   // WHERE
+//   wherevar = "==",
+//   whereDict,
+//   valuevar,
+//   docvar,
+//   //
+//   //
+//   logtrue,
+//   messvar = "",
+//   funcvar,
+//   boolvar,
+//   boolTrue,
+//   limitvar,
+//   addTrue,
+//   orderTrue,
+//   orderDateTrue,
+//   orderType,
+// }) {
+//   // 1getfire
 
-  logtrue =
-    //
-    logtrue;
-  // "";
-  // "asd";
+//   logtrue =
+//     //
+//     logtrue;
+//   // "";
+//   // "asd";
 
-  function filtDoc(sdfe) {
-    return q.Get(q.Ref(q.Collection(typevar), sdfe));
-  }
+//   function filtDoc(sdfe) {
+//     return q.Get(q.Ref(q.Collection(typevar), sdfe));
+//   }
 
-  function quesKey() {
-    const okae = `${typevar}_by_${keyvar}`;
+//   function quesKey() {
+//     const okae = `${typevar}_by_${keyvar}`;
 
-    let iwqesa = q.Get(q.Match(q.Index(okae), valuevar));
-    // iwqesa = q.Ref(iwqesa)
-    // iwqesa = q.Paginate(iwqesa)
-    // iwqesa = q.Select(["ref"], iwqesa)
+//     let iwqesa = q.Get(q.Match(q.Index(okae), valuevar));
+//     // iwqesa = q.Ref(iwqesa)
+//     // iwqesa = q.Paginate(iwqesa)
+//     // iwqesa = q.Select(["ref"], iwqesa)
 
-    logs.logga("quersKey ", {
-      KEYVAR: okae,
-      VALUEVAR: valuevar,
-      FINAL: iwqesa,
-    });
+//     logs.logga("quersKey ", {
+//       KEYVAR: okae,
+//       VALUEVAR: valuevar,
+//       FINAL: iwqesa,
+//     });
 
-    return iwqesa;
-  }
+//     return iwqesa;
+//   }
 
-  function filtWhere(xcasdwv, dfae) {
-    for (const [key, value] of Object.entries(dfae)) {
-      //
-    }
+//   function filtWhere(xcasdwv, dfae) {
+//     for (const [key, value] of Object.entries(dfae)) {
+//       //
+//     }
 
-    return xcasdwv;
-  }
+//     return xcasdwv;
+//   }
 
-  const botheo = keyvar && valuevar;
+//   const botheo = keyvar && valuevar;
 
-  let refMod = docvar
-    ? filtDoc(docvar)
-    : multidocs
-    ? multidocs.map(filtDoc)
-    : botheo && quesKey();
+//   let refMod = docvar
+//     ? filtDoc(docvar)
+//     : multidocs
+//     ? multidocs.map(filtDoc)
+//     : botheo && quesKey();
 
-  let sdfgrt =
-    //
-    refMod;
-  //   botheo
-  //     ? refMod.where(keyvar, wherevar, valuevar)
-  //     : whereDict
-  //     ? filtWhere(refMod, whereDict)
-  //     : refMod;
+//   let sdfgrt =
+//     //
+//     refMod;
+//   //   botheo
+//   //     ? refMod.where(keyvar, wherevar, valuevar)
+//   //     : whereDict
+//   //     ? filtWhere(refMod, whereDict)
+//   //     : refMod;
 
-  // orderType = orderType ? orderType : orderDateTrue ? "createdAt" : "";
-  // orderType,
+//   // orderType = orderType ? orderType : orderDateTrue ? "createdAt" : "";
+//   // orderType,
 
-  let fdsew0 =
-    //
-    sdfgrt;
-  // ofdg0r;
-  //   orderType ? sdfgrt.orderBy(orderType, "desc") : sdfgrt;
+//   let fdsew0 =
+//     //
+//     sdfgrt;
+//   // ofdg0r;
+//   //   orderType ? sdfgrt.orderBy(orderType, "desc") : sdfgrt;
 
-  let aosdfkew =
-    //
-    fdsew0;
-  // limitvar ? fdsew0.limit(limitvar) : fdsew0;
+//   let aosdfkew =
+//     //
+//     fdsew0;
+//   // limitvar ? fdsew0.limit(limitvar) : fdsew0;
 
-  let dsaors = funcvar ? funcvar(aosdfkew) : aosdfkew;
+//   let dsaors = funcvar ? funcvar(aosdfkew) : aosdfkew;
 
-  const truFind = addTrue && !dsaors;
+//   const truFind = addTrue && !dsaors;
 
-  logs.logga(messvar + "___ fauna ANY ___", {
-    dsaors: dsaors,
-    addTrue: addTrue,
-    truFind: truFind,
-  });
+//   logs.logga(messvar + "___ fauna ANY ___", {
+//     dsaors: dsaors,
+//     addTrue: addTrue,
+//     truFind: truFind,
+//   });
 
-  //   if (truFind) {
-  //     let osd = sfdgre.add(whereDict);
-  //     return osd;
-  //   }
+//   //   if (truFind) {
+//   //     let osd = sfdgre.add(whereDict);
+//   //     return osd;
+//   //   }
 
-  return dsaors;
-}
+//   return dsaors;
+// }
 
-export async function FaunaModel({
-  typeFunc,
-  newID,
-  fetchArgs,
-  docvar,
-  addArgs,
-  funcvar,
-  errorFunc,
-  logtrue,
-  messvar,
-}) {
-  //
-  logtrue =
-    //
-    // "";
-    true;
+// export async function FaunaModel({
+//   typeFunc,
+//   newID,
+//   fetchArgs,
+//   docvar,
+//   addArgs,
+//   funcvar,
+//   errorFunc,
+//   logtrue,
+//   messvar,
+// }) {
+//   //
+//   logtrue =
+//     //
+//     // "";
+//     true;
 
-  function idjeq(sdokfr, sdpkfew) {
-    if (logtrue) {
-      logs.logga(messvar + sdokfr, sdpkfew);
-    }
-  }
+//   function idjeq(sdokfr, sdpkfew) {
+//     if (logtrue) {
+//       logs.logga(messvar + sdokfr, sdpkfew);
+//     }
+//   }
 
-  const osawe =
-    //
-    await getFauna(fetchArgs);
+//   const osawe =
+//     //
+//     await getFauna(fetchArgs);
 
-  const okae = {
-    fetchArgs: fetchArgs,
-    OBJECT: osawe,
-  };
-  idjeq(typevar + "___ FaunMod GET___", fetchArgs);
+//   const okae = {
+//     fetchArgs: fetchArgs,
+//     OBJECT: osawe,
+//   };
+//   idjeq(typevar + "___ FaunMod GET___", fetchArgs);
 
-  logDOSAW(osawe);
+//   logDOSAW(osawe);
 
-  function logDOSAW(adsfr) {
-    //
+//   function logDOSAW(adsfr) {
+//     //
 
-    // const currotIMte =
+//     // const currotIMte =
 
-    let sdofer = {
-      ...addArgs,
-      // createdAt: currotIMte,
-      // modifiedAt: currotIMte,
-    };
+//     let sdofer = {
+//       ...addArgs,
+//       // createdAt: currotIMte,
+//       // modifiedAt: currotIMte,
+//     };
 
-    // if (newID) {
-    //   idjeq("_NEW_ID__ FireMdel ___" + newID, osawe);
+//     // if (newID) {
+//     //   idjeq("_NEW_ID__ FireMdel ___" + newID, osawe);
 
-    //   getDataBase()(typeFunc)
-    //     .doc(newID)
-    //     .set(addArgs)
-    //     .then(asodkwe)
-    //     .catch(errorFunc);
-    // }
+//     //   getDataBase()(typeFunc)
+//     //     .doc(newID)
+//     //     .set(addArgs)
+//     //     .then(asodkwe)
+//     //     .catch(errorFunc);
+//     // }
 
-    switch (typeFunc) {
-      case "delete":
-        idjeq("_DELETE__ FireMdel ___", osawe);
+//     switch (typeFunc) {
+//       case "delete":
+//         idjeq("_DELETE__ FireMdel ___", osawe);
 
-        // osawe.remove();
-        serverClient.query(q.Delete(adsfr)).then(asodkwe).catch(errorFunc);
-        break;
-      case "update":
-        let sdofer = {
-          ...addArgs,
-          modifiedAt: currotIMte,
-        };
+//         // osawe.remove();
+//         serverClient.query(q.Delete(adsfr)).then(asodkwe).catch(errorFunc);
+//         break;
+//       case "update":
+//         let sdofer = {
+//           ...addArgs,
+//           modifiedAt: currotIMte,
+//         };
 
-        idjeq("_UPDATE FireMdel ___", {
-          OBJECT: osawe,
-          updateITEMS: sdofer,
-        });
+//         idjeq("_UPDATE FireMdel ___", {
+//           OBJECT: osawe,
+//           updateITEMS: sdofer,
+//         });
 
-        if (docvar) {
-          client
-            .query(q.Update(adsfr, { data: sdofer }))
-            .then(asodkwe)
-            .catch(errorFunc);
-        } else {
-          client
-            .query(q.Create(adsfr, { data: sdofer }))
-            .then(asodkwe)
-            .catch(errorFunc);
-        }
-    }
-  }
+//         if (docvar) {
+//           client
+//             .query(q.Update(adsfr, { data: sdofer }))
+//             .then(asodkwe)
+//             .catch(errorFunc);
+//         } else {
+//           client
+//             .query(q.Create(adsfr, { data: sdofer }))
+//             .then(asodkwe)
+//             .catch(errorFunc);
+//         }
+//     }
+//   }
 
-  function asodkwe({ data, ...cbvnt }) {
-    //
+//   function asodkwe({ data, ...cbvnt }) {
+//     //
 
-    idjeq("___ FUREBASE ADD DATA aaaaa ___", dataoi);
+//     idjeq("___ FUREBASE ADD DATA aaaaa ___", dataoi);
 
-    let aoskew = {
-      ...data,
-      ...cbvnt,
-    };
+//     let aoskew = {
+//       ...data,
+//       ...cbvnt,
+//     };
 
-    let slkdmwe = {
-      WITHARGS: sfdokewe,
-      RAW: dataoi,
-      SNAPSHOT: aoskew,
-    };
+//     let slkdmwe = {
+//       WITHARGS: sfdokewe,
+//       RAW: dataoi,
+//       SNAPSHOT: aoskew,
+//     };
 
-    idjeq("___ FAUNA ADD DATA bbbb ___", slkdmwe);
+//     idjeq("___ FAUNA ADD DATA bbbb ___", slkdmwe);
 
-    if (funcvar) {
-      funcvar(aoskew);
-    }
-  }
+//     if (funcvar) {
+//       funcvar(aoskew);
+//     }
+//   }
 
-  // .doc(xocve)
-  // .set(sdijf);
-  return odawe;
-}
+//   // .doc(xocve)
+//   // .set(sdijf);
+//   return odawe;
+// }

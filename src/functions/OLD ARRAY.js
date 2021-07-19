@@ -1,13 +1,5 @@
 import { filter, isEmpty, remove } from "lodash";
-import { checkDict, objectTrue } from "./dictFuncs";
 import * as logs from "./logFuncs";
-import { sortBy } from "lodash";
-
-export function moveItemFront(listo, itemo) {
-  const jsdas = sortBy(listo, ({ type }) => (type === itemo ? 0 : 1));
-
-  return jsdas;
-}
 
 export function getFirstArr(dataVar) {
   dataVar = turnarray(dataVar)[0];
@@ -15,37 +7,29 @@ export function getFirstArr(dataVar) {
   return dataVar;
 }
 
-export function turnarray(arrVary) {
-  const checkArr = Array.isArray(arrVary) ? arrVary : [arrVary] 
-  return checkArr;
-}
+export function turnarray(arrVary, extraPush) {
+  const checkArr = Array.isArray(arrVary);
+  const emptArr = [];
+  emptArr.push(arrVary);
 
-export function mapFuncDict(arrVar, funcVar, dictvar) {
-  function hereo(obj, indexvar) {
-    const obrar = dictvar ? dictvar[obj] : obj;
+  // var eventsArray = events ? [].concat(events) : [];
 
-    const vkbmdfs =
-      //
-      // "opkcwqe";
-      funcVar ? funcVar(obrar) : obrar;
+  arrVary = arrVary ? (checkArr ? arrVary : emptArr) : [];
 
-    return vkbmdfs;
+  // logs.logga("arrVary-vvvv", arrVary, "vjjjjjvv");
+  if (extraPush) {
+    arrVary.push(extraPush);
   }
-  //
 
-  const asudjwe =
-    //
-    // "asodkaewqe";
-    arrVar.map(hereo);
+  //   logs.logga("arrVary-zzzzz", arrVary, "vjjjjjvv");
+  //   logs.logga("checkArr", checkArr, "vjjjjjvv");
 
-  return asudjwe;
+  // arrVary = removeEmptyArray(arrVary);
+
+  return arrVary;
 }
 
-export function mapListDict(arrvar, dictvar) {
-  return mapFuncDict(arrvar, "", dictvar);
-}
-
-export function mapFunc(arrVar, funcVar, dictvar) {
+export function mapFunc(arrVar, funcVar, limit) {
   function hereo(obj, indexvar) {
     const obrar =
       //
@@ -62,18 +46,16 @@ export function mapFunc(arrVar, funcVar, dictvar) {
     const vkbmdfs =
       //
       // "opkcwqe";
-      funcVar ? funcVar(obj) : ijadw;
+      funcVar(ijadw);
 
     return vkbmdfs;
   }
   //
 
-  const ndfigt = arrVar && removeEmptyArray(turnarray(arrVar));
-
   const asudjwe =
     //
     // "asodkaewqe";
-    ndfigt && ndfigt.map(hereo);
+    arrVar && turnarray(arrVar).map(hereo);
 
   return asudjwe;
 }
@@ -157,10 +139,6 @@ export function getLength(arr) {
   return arr;
 }
 
-export function removeItemArray(...asdf) {
-  return removeArray(...asdf);
-}
-
 export function removeArray(array, obj, attr) {
   //   _.remove(obj.subTopics, {
   //     subTopicId: stToDelete
@@ -208,6 +186,10 @@ export function removeArray(array, obj, attr) {
   return okdsasd;
 }
 
+export function removeItemArray(arrBig, arrSmall) {
+  //   return fullo;
+}
+
 export function filterDictArray(myArr, sdofkewr) {
   const okada = filter(myArr, sdofkewr);
 
@@ -224,42 +206,17 @@ export function mapSelectEnd(odsfe, asdfer) {
   return sdore;
 }
 
-export function mapSelectValue(arrBig, { dictvar, labelFunc, valueFunc }) {
-  //
+export function mapSelectValue(arrBig) {
   function asijdwe(asdae) {
-    const ndsire =
-      //
-      // asdae
-      checkDict(dictvar, asdae);
-
-    const sidjf =
-      //
-      // asdae
-      ndsire;
-
     let sakde = {
-      label: labelFunc ? labelFunc(sidjf) : asdae,
-      value: valueFunc ? valueFunc(ndsire) : asdae,
-      isDisabled: true,
+      label: asdae,
+      value: asdae,
     };
-
-    logs.logga("___ brSeacrch MAPPO ___", {
-      asdae: asdae,
-      sakde: sakde,
-      // dictvar: dictvar,
-    });
 
     return sakde;
   }
 
-  logs.logga("___ brSeacrch LIST ___", {
-    arrBig: arrBig,
-    dictvar: dictvar,
-  });
-
-  const dretjer = arrBig.map(asijdwe);
-
-  return dretjer;
+  return arrBig && arrBig.map(asijdwe);
 }
 
 // 1map
@@ -295,25 +252,7 @@ export function mapValue(arrBig) {
   return arrBig && arrBig.map((asdae) => asdae.value);
 }
 
-// 1map mapDict
-export function mipBase(dictvar) {
-  const dfokg = new Set();
-
-  for (const [key, value] of Object.entries(dictvar)) {
-    const xcbsfd = objectTrue(value) && Object.keys(value);
-
-    if (xcbsfd) {
-      xcbsfd.map((sfwew) => dfokg.add(sfwew));
-    }
-  }
-
-  return Array.from(dfokg);
-}
-
-export function getListAll(arrvar, { dictvar }) {
-  return dictvar ? mipBase(dictvar) : arrvar;
-}
-
+// 1map
 export function mapReturn(arrBig, arrSmall) {
   return arrBig && arrBig.map(arrSmall);
 }
@@ -386,10 +325,6 @@ export function stringinarray(stirngo, arreo) {
   return okasdw;
 }
 
-export function checkAllArray(arr, item) {
-  return arr && arr.every((dsf) => dsf === item);
-}
-
 export function addRemoveArray(pushArr, obj, attrVar) {
   //   pushArr = turnarray(pushArr);
   //   const dicto = findArrayTrue(pushArr, obj, attrVar);
@@ -408,24 +343,4 @@ export function addRemoveArray(pushArr, obj, attrVar) {
   //   }
 
   return pushArr;
-}
-
-export function mapArrFunc(arrfunc, funco) {
-  var vallo = "";
-
-  logs.logga("___ arrfunc, funco ___", { arrfunc, funco });
-
-  for (var i = 0; i < arrfunc.length; i++) {
-    const ITEMO = arrfunc[i];
-    const ITEMAFTERFUNC = funco(ITEMO);
-
-    logs.logga("___ nsdifwer ___", { ITEMO, ITEMAFTERFUNC });
-
-    if (ITEMAFTERFUNC) {
-      vallo = ITEMAFTERFUNC;
-      break;
-    }
-  }
-
-  return vallo;
 }

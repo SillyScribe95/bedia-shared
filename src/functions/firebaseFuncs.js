@@ -1,24 +1,23 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
-
 import * as logs from "./logFuncs";
 import { ModelCatch } from "./modelFuncs";
 import { addFuncsUse, creatUseAfter } from "./userFuncs";
 import { getDataBase } from "./backendFuncs";
 import { turnarray } from "./arrayFuncs";
 
-var config = {
-  apiKey: "AIzaSyCTNAVPnCcrNJV1wEzObL-Ky6UGvUeuZMU",
-  authDomain: "test-bediab.firebaseapp.com",
-  projectId: "test-bediab",
-  storageBucket: "test-bediab.appspot.com",
-  messagingSenderId: "883595134259",
-  appId: "1:883595134259:web:faea61357a081300b56a46",
-  measurementId: "G-4WV7DT0V17",
-};
+import firebase from "firebase/app";
+// import "firebase/auth";
+// import "firebase/firestore";
+// var config = {
+//   apiKey: "AIzaSyCTNAVPnCcrNJV1wEzObL-Ky6UGvUeuZMU",
+//   authDomain: "test-bediab.firebaseapp.com",
+//   projectId: "test-bediab",
+//   storageBucket: "test-bediab.appspot.com",
+//   messagingSenderId: "883595134259",
+//   appId: "1:883595134259:web:faea61357a081300b56a46",
+//   measurementId: "G-4WV7DT0V17",
+// };
 
-firebase.initializeApp(config);
+// firebase.initializeApp(config);
 
 export function fireInit(config) {
   //
@@ -52,7 +51,7 @@ export function FireUser(fireObj) {
   // getAuth("userSign");
   // useAuthState(firebase.auth());
 
-  logs.loggo("___fireUser fireObj ___", fireObj);
+  logs.logga("___fireUser fireObj ___", fireObj);
 
   const BaseRRue =
     //
@@ -86,7 +85,7 @@ export function FireUser(fireObj) {
   //   error: error,
   // };
 
-  logs.loggo("___ FireUser ___", {
+  logs.logga("___ FireUser ___", {
     BASIC: BaseRRue,
     EXPAND: skmae,
   });
@@ -188,13 +187,13 @@ export function fireConnect(typeVar, { funcvar, fireObj }) {
   let dsofkes = "";
   switch (typeVar) {
     case "google":
-      dsofkes = new fireMain(fireObj).auth.GoogleAuthProvider();
+      dsofkes = fireObj.auth.GoogleAuthProvider();
       break;
     case "facebook":
-      dsofkes = new fireMain(fireObj).auth.FacebookAuthProvider();
+      dsofkes = fireObj.auth.FacebookAuthProvider();
       break;
     case "twitter":
-      dsofkes = new fireMain(fireObj).auth.TwitterAuthProvider();
+      dsofkes = fireObj.auth.TwitterAuthProvider();
       break;
     // case "instagram":
     //     dsofkes = new firebase.auth.TwitterAuthProvider();
@@ -208,11 +207,9 @@ export function fireConnect(typeVar, { funcvar, fireObj }) {
     funcvar(userBase);
   }
 
-  fireMain(fireObj)
-    .auth()
-    .signInWithPopup(dsofkes)
-    .then(aokdw)
-    .catch(errCreate);
+  // .signInWithPopup(dsofkes)
+  // .then(aokdw)
+  // .catch(errCreate);
 }
 
 export async function fireEdit({

@@ -28,7 +28,7 @@ import {
   saveModel,
 } from "./backendFuncs";
 import { linkuseNameProvide } from "../consts/constLink";
-import { updateFauna, createFauna } from "./faunaFuncs";
+// import { updateFauna, createFauna } from "./faunaFuncs";
 // import { addModelUserItem } from "./addModelUserItem";
 
 export function getModelImage(obj) {
@@ -292,9 +292,8 @@ export async function modelSubmit(
   const oksad = ijdsfe.id;
 
   let sidjwe = userObj && {
-    userID: userObj.id
-  }
-
+    userID: userObj.id,
+  };
 
   ijdsfe = removeEmptyDict({
     ...sidjwe,
@@ -310,21 +309,19 @@ export async function modelSubmit(
 
   logs.logga("___ AlrModel fitsUBMIT bbbb___", sdfijerq);
 
+  let oaksd = "";
+  switch (typeos) {
+    case indexHighlights:
+      oaksd = await saveHighlight(sdfijerq);
+    // case indexPlaylist:
+    //   oaksd = await saveHighlight(sdfijerq);
+    // case indexHighlights:
+    //   oaksd = await saveHighlight(sdfijerq);
 
+    default:
+      oaksd = await FireModel(sdfijerq);
+  }
 
-let oaksd = ""
-switch (typeos){
-  case indexHighlights:
-    oaksd = await saveHighlight(sdfijerq);
-  // case indexPlaylist:
-  //   oaksd = await saveHighlight(sdfijerq);
-  // case indexHighlights:
-  //   oaksd = await saveHighlight(sdfijerq);
-    
-  default:
-    oaksd = await FireModel(sdfijerq);
-}
-  
   // let oaksd = oksad
   //   ? await updateFauna(typeos, ijdsfe, saewe)
   //   : await createFauna(typeos, ijdsfe, saewe);

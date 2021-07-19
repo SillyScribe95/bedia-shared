@@ -1,3 +1,4 @@
+import * as logs from "./logFuncs";
 /*global chrome*/
 
 export function getLocalChrome(item, funcvar) {
@@ -16,4 +17,53 @@ export function fillInput(elementId, value) {
     console.log("successfully filled");
     element.blur();
   }
+}
+
+export function getAllStorage() {
+  var values = [],
+    keys = Object.keys(localStorage),
+    i = keys.length;
+
+  while (i--) {
+    values.push(localStorage.getItem(keys[i]));
+  }
+
+  return values;
+}
+
+export function getLocal(identVar) {
+  // const date2 = new Date(localStorage.getItem("date"));
+  const trueProd = localStorage.getItem(identVar);
+
+  // const trueAll = trueProd;
+  const trueAll = trueProd ? JSON.parse(trueProd) : "";
+  const sadokawe = trueAll && trueAll.data;
+
+  // logs.logga("___ cxvksf ___", cxvksf);
+
+  return sadokawe;
+}
+
+export function setLocal(stringVar, identVar) {
+  const dateFirst = new Date();
+  // const dateo = dateFirst.getTime();
+
+  const oobo = {
+    date: dateFirst,
+    data: identVar,
+  };
+
+  const obVar = JSON.stringify(oobo);
+
+  const itmget = localStorage.getItem(stringVar);
+
+  logs.logga("___ localStorage ___", {
+    stringVar,
+    obVar,
+    localStorage,
+    itmget,
+  });
+
+  localStorage.removeItem(stringVar);
+  localStorage.setItem(stringVar, obVar);
 }

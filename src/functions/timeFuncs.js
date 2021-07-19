@@ -74,3 +74,14 @@ export function getDuration(starto, endo) {
 
   return oakase;
 }
+
+export function dateFromNow(nummo, typeo = "minutes", datevar = new Date()) {
+  let isade = endo ? endo - starto : 0;
+  let oakase = 1;
+  //
+  isade;
+  // "";
+  // timeDecim(isade);
+
+  return oakase;
+}

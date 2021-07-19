@@ -6,7 +6,7 @@ export function getWebCurrentTime(player) {
   let playRo = getPlayVar();
   let timeos = playRo && playRo.currentTime;
 
-  logs.loggo("___ getWbCurrentTime ___", {
+  logs.logga("___ getWbCurrentTime ___", {
     playRo: playRo,
     TIME: timeos,
   });
@@ -18,7 +18,7 @@ export function changeWebPlayerTime(timeo, playRef) {
   let playRo = playRef ? playRef : getPlayVar();
   let endTimeo = getWebCurrentTime() + timeo;
 
-  logs.loggo("___ chanWebPlayerTime ___", {
+  logs.logga("___ chanWebPlayerTime ___", {
     playRo: playRo,
     TIME: endTimeo,
   });

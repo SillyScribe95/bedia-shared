@@ -7,7 +7,7 @@ import {
   FireUser,
   getMapFire,
 } from "./firebaseFuncs";
-import { getFauna } from "./faunaFuncs";
+// import { getFauna } from "./faunaFuncs";
 // import { GraphArgo } from "./graphFuncs";
 import * as logs from "./logFuncs";
 

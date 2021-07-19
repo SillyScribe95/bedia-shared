@@ -12,7 +12,7 @@ function App() {
 
     const isjdfew = await getBookInfo(fuhgwer);
 
-    logs.loggo("getBooks---", isjdfew);
+    logs.logga("getBooks---", isjdfew);
     //
   }
 

@@ -1,8 +1,47 @@
+import { turnarray } from "./arrayFuncs";
 import * as logs from "./logFuncs";
 import { joinString } from "./stringFuncs";
 
 export function turnDict(dictvar) {
   return Object.entries(dictvar);
+}
+
+export function objectTrue(dictvar) {
+  return typeof dictvar == "object";
+}
+
+// 1match
+export function matchDictAttr(vlbdf, string, attr) {
+  for (const [key, value] of Object.entries(vlbdf)) {
+    const ndifvd = attr ? value[attr] : value;
+    if (ndifvd == string) {
+      return value;
+      break;
+    }
+  }
+}
+
+export function getAnyDictValue(vlbdf) {
+  if (vlbdf) {
+    for (const [key, value] of Object.entries(vlbdf)) {
+      if (!value) {
+        return key;
+      } else {
+        // return false;
+      }
+    }
+  }
+}
+
+export function checkDict(dictvar, cxzvd) {
+  const asdrae = dictvar
+    ? {
+        listItemName: cxzvd,
+        ...dictvar[cxzvd],
+      }
+    : cxzvd;
+
+  return asdrae;
 }
 
 export function mapDictAttr(obj, dictvar) {
@@ -27,13 +66,28 @@ export function mapDictNew(dictvar, nqeo) {
 }
 
 export function mapDictAttrToString(listvar, join, dictvar) {
-  const okasasd = listvar.map((asda) => dictvar[asda]);
+  //
+  function sigjt(dfigjtr) {
+    const ijfge = typeof dfigjtr == "string";
+    const bifdre = ijfge ? dfigjtr : "";
 
-  logs.loggo("___ okasasd ___", okasasd);
+    logs.logga("___ mapDictAttrToString ___", { dfigjtr, ijfge, bifdre });
 
+    return bifdre;
+  }
+  
+  function sidjfer(asda) {
+    const dfigjtr = dictvar && dictvar[asda];
+
+    return turnarray(dfigjtr).map(sigjt);
+  }
+
+  const okasasd = listvar.map(sidjfer);
   const ofkew = joinString(okasasd, join);
 
-  logs.loggo("___ mapDictAttrToString ___", {
+  logs.logga("___ mapDictAttrToString ___", {
+    ATTR_LIST: listvar,
+    DICT: dictvar,
     ARRAY: okasasd,
     JOINED: ofkew,
   });
@@ -88,6 +142,32 @@ export function mapDictKey(dictvar) {
   return toksaew;
 }
 
+// 1map
+
+export function mapDictFunc(dictvar, dictfunc) {
+  const ijsdase = {};
+  for (const [key, value] of Object.entries(dictvar)) {
+    ijsdase[key] = dictfunc(value);
+  }
+
+  return ijsdase;
+}
+
+export function mapDictKeyToValue(dict, attr) {
+  const sdjfer = {};
+
+  for (const [key, value] of Object.entries(dict)) {
+    const jsfer = {
+      [attr]: key,
+      ...value,
+    };
+
+    sdjfer[key] = jsfer;
+  }
+
+  return sdjfer;
+}
+
 export function createNewDictFromAttr(arrvar, attr) {
   var oksae = {};
   arrvar.map(function (wewq) {
@@ -135,8 +215,11 @@ export function convertObjectDict(obj) {
   return oaksde;
 }
 
-// export function mapDictFunc(doct ){
+// export function mapDictFunc(dictvar, dictfunc) {
+//   const ijsdase = {};
+//   for (const [key, value] of Object.entries(dictvar)) {
+//     ijsdase[key] = dictfunc(value);
+//   }
 
-//     reutn
-
+//   return ijsdase;
 // }

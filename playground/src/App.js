@@ -3,7 +3,7 @@ import "./App.css";
 import { getBookInfo } from "bedia-shared";
 
 function App() {
-  a;
+
   // 1BOOK
   async function getBooks() {
     const fuhgwer =
@@ -12,7 +12,7 @@ function App() {
 
     const isjdfew = await getBookInfo(fuhgwer);
 
-    logs.loggo("getBooks---", isjdfew);
+    logs.logga("getBooks---", isjdfew);
     //
   }
 

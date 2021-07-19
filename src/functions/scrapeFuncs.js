@@ -1,6 +1,6 @@
 // import { getRegexURL } from "./globalFunc";
 import * as logs from "../functions/logFuncs";
-import { getFirstArr, removeEmptyArray } from "./arrayFuncs";
+import { getFirstArr, mapArrFunc, removeEmptyArray } from "./arrayFuncs";
 
 // import { getCurrTime } from "./playerFuncs";
 // import { openBediaNew } from "./chromeFuncs";
@@ -73,7 +73,18 @@ export function paramFin(asdwsd, asdwe) {
   return asdwsd.searchParams.get(asdwe);
 }
 
-// export function getURLExpan
+// 1url 1base
+export function getBaseURL(docvar) {
+  let sadkjwe =
+    //
+    getURLDict(docvar);
+
+  let urlMain =
+    //
+    sadkjwe.host;
+
+  return urlMain;
+}
 
 export function getPageParams(docvar) {
   let logtrue = "";
@@ -166,7 +177,14 @@ export function mainFuncs(params) {
   logs.logga("___ logs ___", oksdw);
 }
 
-export function getURLDict(dfigjreit) {
+// 1path 1link
+export function getPathArray() {
+  const cvbokdf = getURLDict();
+
+  return cvbokdf ? cvbokdf["pathArray"] : "";
+}
+
+export function getURLDict(dfigjreit = window.location.href) {
   const okdaew =
     //
     "https://";
@@ -195,4 +213,70 @@ export function getURLDict(dfigjreit) {
   logs.logga("___ getURDict aaa ___", kasew);
 
   return sadkjwe;
+}
+
+export function getTagText(jsdfew) {
+  const qasde = jsdfew ? jsdfew.innerText : "";
+  return qasde;
+}
+
+export function findClassDoc(asdwsd, asdwe) {
+  const jsdfew = document.getElementsByClassName(asdwsd)[0];
+  // const qasde = jsdfew ? jsdfew.innerText : ""
+
+  return jsdfew;
+}
+
+export function insertClassDoc(asdwsd, cvbij) {
+  const jsdfew = findClassDoc(asdwsd);
+
+  logs.logga("___ insertClassDoc ___", jsdfew);
+
+  if (jsdfew) {
+    logs.logga("___ insertClassDoc FOUND ___");
+
+    setTimeout(function () {
+      logs.logga("___ input FOCUS ___");
+      jsdfew.focus();
+    }, 0);
+
+    logs.logga("___ document.execCommand paste ___");
+    document.execCommand("paste");
+
+    // CLEAR INPUT
+    setto("aria-label", "");
+
+    // ADD INPUT
+    setto("value", cvbij);
+    setto("data-text", cvbij);
+
+    // jsdfew.innerText = cvbij;
+    jsdfew.innerHTML = cvbij;
+    jsdfew.replaceChildren(cvbij);
+  }
+
+  logs.logga("___ insertClassDoc END___", jsdfew);
+
+  //
+  //
+  function setto(sdfer, VALUE) {
+    logs.logga(sdfer, "___ setto ___", VALUE);
+
+    jsdfew[sdfer] = VALUE;
+    jsdfew.setAttribute(sdfer, VALUE);
+  }
+}
+
+export function findTagInner(arro, funcvar, attvar) {
+  let xcvkds = mapArrFunc(arro, funcvar);
+  const dfijer = getTagText(xcvkds);
+
+  logs.logga("___ findTagInner ___", { xcvkds, dfijer });
+
+  return dfijer;
+  // return jsdfew;
+}
+
+export function findClassInner(arro, attvar) {
+  return findTagInner(arro, findClassDoc);
 }

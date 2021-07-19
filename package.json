@@ -9,29 +9,22 @@
   ],
   "private": true,
   "dependencies": {
-    "@stripe/stripe-js": "^1.8.0",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.21.1",
-    "country-data": "0.0.31",
-    "currencies-exchange-rates": "^1.0.2",
-    "faunadb": "^4.2.0",
+    "encoding": "^0.1.13",
     "firebase": "^8.3.1",
     "lodash": "^4.17.21",
+    "luxon": "^1.28.0",
     "pluralize": "^8.0.0",
     "pretty-format": "^26.6.2",
     "slugify": "^1.5.3",
-    "web-vitals": "^1.1.2",
-    "ytdl-core": "^4.5.0"
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rollup -c",
+    "build": "rollup -c -w",
     "build-watch": "rollup -c -w",
     "start-playground": "cd playground && npm run start",
     "i-all": "npm i && cd playground && npm i",
-    "play": "cls && npm-run-all --parallel build-watch start-playground",
+    "play": "cls && npm-run-all --parallel build-watch",
     "dev": "cls && npm run build-watch"
   },
   "eslintConfig": {

@@ -8,6 +8,7 @@ import * as logs from "./functions/logFuncs";
 export { logs };
 
 export * from "./functions/extensionFuncs";
+export * from "./functions/regexFuncs";
 export * from "./functions/arrayFuncs";
 export * from "./functions/dictFuncs";
 export * from "./functions/lengthFuncs";
@@ -24,9 +25,12 @@ export * from "./functions/emojiFuncs";
 export * from "./functions/notionFuncs";
 export * from "./functions/userFuncs";
 export * from "./functions/backendFuncs";
-
+export * from "./functions/copyFuncs";
 export * from "./functions/chromeFuncs";
 export * from "./functions/scrapeFuncs";
+
+// 1backend
+export * from "./functions/firebaseFuncs";
 
 // 1data 1model
 export * from "./functions/modelFuncs";
