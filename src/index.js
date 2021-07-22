@@ -1,7 +1,7 @@
 // import {
 //     //
 //     logs,
-//  } from "@SillyScribe95/bedia-shared";
+//  } from "bedia-shared";
 
 // 1logs
 import * as logs from "./functions/logFuncs";

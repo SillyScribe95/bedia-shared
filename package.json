@@ -1,5 +1,5 @@
 {
-  "name": "@SillyScribe95/bedia-shared",
+  "name": "bedia-shared",
   "version": "0.1.0",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
@@ -10,7 +10,7 @@
   "private": true,
   "dependencies": {
     "encoding": "^0.1.13",
-    "firebase": "^8.3.1",
+    "firebase": "^8.7.1",
     "lodash": "^4.17.21",
     "luxon": "^1.28.0",
     "pluralize": "^8.0.0",
