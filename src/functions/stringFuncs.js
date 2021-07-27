@@ -10,6 +10,21 @@ export function quoteSurround(stringVar) {
   return "'" + stringVar + "'";
 }
 
+export function arrayinstring(string, array) {
+  let noThere = "";
+
+  for (var i = 0; i < array.length; i++) {
+    noThere = string.includes(array[i]);
+    if (noThere) {
+      break;
+    }
+  }
+
+  return noThere;
+}
+
+export function stringinstring() {}
+
 export function joinString(arrayo, strngo = "", first = "") {
   arrayo = turnarray(arrayo);
   const okasd = arrayo ? arrayo.join(strngo) : "";
