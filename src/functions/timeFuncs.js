@@ -1,87 +1,87 @@
-import moment from "moment";
-import * as bearlog from "./logFuncs";
+// // import moment from "moment";
+// import * as bearlog from "./logFuncs";
 
-export function durationParser(inputTime, formatType = "h[h] m[m]") {
-  // finalForm = moment.duration(inputTime).format("h[hrs] m[min] s[sec]");
-  var momentDurationFormatSetup = require("moment-duration-format");
+// export function durationParser(inputTime, formatType = "h[h] m[m]") {
+//   // finalForm = moment.duration(inputTime).format("h[hrs] m[min] s[sec]");
+//   var momentDurationFormatSetup = require("moment-duration-format");
 
-  const ijge = {
-    inputTime: inputTime,
-    formatType: formatType,
-  };
+//   const ijge = {
+//     inputTime: inputTime,
+//     formatType: formatType,
+//   };
 
-  bearlog.lug("___ ijge ___", ijge);
+//   bearlog.lug("___ ijge ___", ijge);
 
-  const timeDicto = {
-    hms: "h:*mm:ss",
-    sfp: "s",
-    ms: "m[m] s[s]",
-    hm: "h[h] m[m]",
-    // decimal: "mm m ss s",
-    hms: "h:*mm:ss",
-  };
+//   const timeDicto = {
+//     hms: "h:*mm:ss",
+//     sfp: "s",
+//     ms: "m[m] s[s]",
+//     hm: "h[h] m[m]",
+//     // decimal: "mm m ss s",
+//     hms: "h:*mm:ss",
+//   };
 
-  const bvnfdgd =
-    //
-    // "";
-    moment.duration(inputTime, "seconds");
+//   const bvnfdgd =
+//     //
+//     // "";
+//     moment.duration(inputTime, "seconds");
 
-  const formios =
-    //
-    formatType ? timeDicto[formatType] : formatType;
-  // timeDicto[formatType]
+//   const formios =
+//     //
+//     formatType ? timeDicto[formatType] : formatType;
+//   // timeDicto[formatType]
 
-  const finalForm =
-    //
-    // "";
-    bvnfdgd.format(formios);
+//   const finalForm =
+//     //
+//     // "";
+//     bvnfdgd.format(formios);
 
-  const cvlmbfddsf = {
-    MOMENTED: bvnfdgd,
-    TYP: formios,
-    finalForm: finalForm,
-  };
+//   const cvlmbfddsf = {
+//     MOMENTED: bvnfdgd,
+//     TYP: formios,
+//     finalForm: finalForm,
+//   };
 
-  bearlog.lug("___ cvlmbfddsf ___", cvlmbfddsf);
+//   bearlog.lug("___ cvlmbfddsf ___", cvlmbfddsf);
 
-  return finalForm;
-}
+//   return finalForm;
+// }
 
-export const iajew = "h:mm:ss";
-const asdokass = "mm m ss s";
-export function timeDecim(minuteva) {
-  // let endinqqqq = durationParser(minuteva, iajew);
+// export const iajew = "h:mm:ss";
+// const asdokass = "mm m ss s";
+// export function timeDecim(minuteva) {
+//   // let endinqqqq = durationParser(minuteva, iajew);
 
-  function goins() {
-    const inneioa = minuteva < 1;
-    const hjrdfft = inneioa ? "0:00" : durationParser(minuteva, iajew);
+//   function goins() {
+//     const inneioa = minuteva < 1;
+//     const hjrdfft = inneioa ? "0:00" : durationParser(minuteva, iajew);
 
-    return hjrdfft;
-  }
+//     return hjrdfft;
+//   }
 
-  let endinqqqq = minuteva > 0 ? goins() : "0:00";
+//   let endinqqqq = minuteva > 0 ? goins() : "0:00";
 
-  return endinqqqq;
-}
+//   return endinqqqq;
+// }
 
-export function getDuration(starto, endo) {
-  let isade = endo ? endo - starto : 0;
-  let oakase =
-    //
-    isade;
-  // "";
-  // timeDecim(isade);
+// export function getDuration(starto, endo) {
+//   let isade = endo ? endo - starto : 0;
+//   let oakase =
+//     //
+//     isade;
+//   // "";
+//   // timeDecim(isade);
 
-  return oakase;
-}
+//   return oakase;
+// }
 
-export function dateFromNow(nummo, typeo = "minutes", datevar = new Date()) {
-  let isade = endo ? endo - starto : 0;
-  let oakase = 1;
-  //
-  isade;
-  // "";
-  // timeDecim(isade);
+// export function dateFromNow(nummo, typeo = "minutes", datevar = new Date()) {
+//   let isade = endo ? endo - starto : 0;
+//   let oakase = 1;
+//   //
+//   isade;
+//   // "";
+//   // timeDecim(isade);
 
-  return oakase;
-}
+//   return oakase;
+// }

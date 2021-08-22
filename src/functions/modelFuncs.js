@@ -8,7 +8,7 @@
 // } from "../../functions/GlobalFunctions";
 // import ModelPanel from "../../components/model/ModelPanel";
 import { mapSelectEnd } from "./arrayFuncs";
-import { getDuration } from "./timeFuncs";
+// import { getDuration } from "./timeFuncs";
 import * as bearlog from "./logFuncs";
 // import AddModelFunc from "./model/AddModelFunc";
 import {
@@ -258,7 +258,10 @@ export function getObjDuration(obj) {
   let asode = obj.startTime;
   let oakae = obj.endTime;
 
-  let isade = getDuration(asode, oakae);
+  let isade =
+    //
+    "";
+  // getDuration(asode, oakae);
 
   return isade;
 }
