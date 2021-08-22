@@ -9,7 +9,7 @@
 // import ModelPanel from "../../components/model/ModelPanel";
 import { mapSelectEnd } from "./arrayFuncs";
 import { getDuration } from "./timeFuncs";
-import * as logs from "./logFuncs";
+import * as bearlog from "./logFuncs";
 // import AddModelFunc from "./model/AddModelFunc";
 import {
   indexComment,
@@ -166,7 +166,7 @@ function getModelAtt(typevar, attr) {
 
 // 1function
 function ModelNote(typeofunc, { typevar, ...asdokwe }) {
-  logs.logga("___ altmodel notification AAAA ___", asdokwe);
+  bearlog.lug("___ altmodel notification AAAA ___", asdokwe);
 
   const kmbfdf = {
     typevar: typevar,
@@ -225,7 +225,7 @@ export function deleteModel(tpyoe, listvar, funcvar) {
     docvar: dsfier,
   };
 
-  logs.logga(tpyoe + "___ deleoModel ___", listvar);
+  bearlog.lug(tpyoe + "___ deleoModel ___", listvar);
 
   let noNote = "";
   //   { noNote, funcvar }
@@ -248,7 +248,7 @@ export function deleteModel(tpyoe, listvar, funcvar) {
     OBJECT: okade,
   };
 
-  logs.logga("___ DELETE OBJECT ___", okaewq);
+  bearlog.lug("___ DELETE OBJECT ___", okaewq);
 
   okade.delete().then(waerwsdf);
   // .catch(error);
@@ -268,7 +268,7 @@ export function ModelCatch(adkwe) {
     //
     adkwe.id || adkwe.googleID || adkwe.wikiID;
 
-  logs.logga("___ ModelCatch ___", {
+  bearlog.lug("___ ModelCatch ___", {
     OBJ: adkwe,
     TRUE: asoekw,
   });
@@ -307,7 +307,7 @@ export async function modelSubmit(
     ...saewe,
   };
 
-  logs.logga("___ AlrModel fitsUBMIT bbbb___", sdfijerq);
+  bearlog.lug("___ AlrModel fitsUBMIT bbbb___", sdfijerq);
 
   let oaksd = "";
   switch (typeos) {

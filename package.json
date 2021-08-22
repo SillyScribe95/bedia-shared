@@ -1,5 +1,5 @@
 {
-  "name": "bedia-shared",
+  "name": "bear-functions",
   "version": "0.1.0",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
@@ -7,7 +7,10 @@
   "files": [
     "./build"
   ],
-  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": "git://github.com/SillyScribe95/bedia-shared",
   "dependencies": {
     "encoding": "^0.1.13",
     "firebase": "^8.7.1",
@@ -19,13 +22,13 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm-run-all --parallel build-watch",
     "build": "rollup -c -w",
     "build-watch": "rollup -c -w",
     "start-playground": "cd playground && npm run start",
     "i-all": "npm i && cd playground && npm i",
-    "play": "cls && npm-run-all --parallel build-watch",
-    "dev": "cls && npm run build-watch"
+    "play": "npm-run-all --parallel build-watch",
+    "dev": "npm run build-watch"
   },
   "eslintConfig": {
     "extends": [

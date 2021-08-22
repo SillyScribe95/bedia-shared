@@ -1,7 +1,7 @@
 import { testHighlight } from "../extra/testHighlight";
 import { mapDictAttr } from "./dictFuncs";
 import { getHighMetaBasic } from "./highlight/getHighMetaBasic";
-import * as logs from "./logFuncs";
+import * as bearlog from "./logFuncs";
 
 // function turnDatNote({key, value}){
 //     let typNot = typeof value
@@ -51,7 +51,7 @@ function getNotionFile(imgsad, type = "link") {
     files: daASD,
   };
 
-  logs.logga("___ getNotionFile ___", okasew);
+  bearlog.lug("___ getNotionFile ___", okasew);
 
   return okasew;
 }
@@ -117,7 +117,7 @@ export function adfwaer({ notion, userObj, ...obj }) {
 
   const baseHigh = getHighMetaBasic(obj);
 
-  logs.logga("___  baseHigh ___", baseHigh);
+  bearlog.lug("___  baseHigh ___", baseHigh);
 
   const notisn = getNotionHighMeta(baseHigh);
   const baseios = getNotionDatbase(notion);
@@ -126,7 +126,7 @@ export function adfwaer({ notion, userObj, ...obj }) {
     ...notisn,
   };
 
-  logs.logga("___ saveHighNotion ___", sfkjre);
+  bearlog.lug("___ saveHighNotion ___", sfkjre);
 
   //   notion.pages.create(notisn);
 

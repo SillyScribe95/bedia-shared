@@ -1,6 +1,6 @@
 import { getEnchancedArray } from "../functions/arrayFuncs";
 import { testUser } from "./testUser";
-import * as logs from "../functions/logFuncs";
+import * as bearlog from "../functions/logFuncs";
 import { testNotData } from "./testNotion";
 import { testMedia } from "./testMedia";
 
@@ -60,7 +60,7 @@ export const swedsfew = getEnchancedArray([
   // testHighlight,
 ]);
 
-logs.logga("___ swedsfew ___", swedsfew);
+bearlog.lug("___ swedsfew ___", swedsfew);
 
 export const testHighlightMedia = {
   ...testHighlight,

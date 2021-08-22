@@ -68,7 +68,7 @@ export default async function CreateTopic(sdfew, currentUser) {
       // PARAMS: objNew,
     };
 
-    logs.logga("CREATED TOPIC --- ADDING TO USER ___", sawesae);
+    bearlog.lug("CREATED TOPIC --- ADDING TO USER ___", sawesae);
 
     editModel(indexUser, currentUser, indexTopic, newList);
   }
@@ -76,7 +76,7 @@ export default async function CreateTopic(sdfew, currentUser) {
   function saodke(adsofkew) {
     //
 
-    logs.logga("___ CREAT TOPIC AFTER CREAT ___", adsofkew);
+    bearlog.lug("___ CREAT TOPIC AFTER CREAT ___", adsofkew);
 
     let isajdwe = currentUser && adsofkew;
     if (isajdwe) {
@@ -100,7 +100,7 @@ export default async function CreateTopic(sdfew, currentUser) {
       userFunc: saodke,
     };
 
-    logs.logga("___CREATING  ___", kjsaew);
+    bearlog.lug("___CREATING  ___", kjsaew);
 
     getDataBase()
       .collection(indexTopic)
@@ -116,7 +116,7 @@ export default async function CreateTopic(sdfew, currentUser) {
     //
     //
     function askwe(asde) {
-      logs.logga("___ asde ___", asde);
+      bearlog.lug("___ asde ___", asde);
 
       if (!asde) {
         actuCreateTop(sdfokr);
@@ -147,7 +147,7 @@ export default async function CreateTopic(sdfew, currentUser) {
       //   });
       // }
 
-      logs.logga("___ mapNOHHO ___", okddsa);
+      bearlog.lug("___ mapNOHHO ___", okddsa);
 
       const koasdw = {
         funcvar: askwe,
@@ -157,7 +157,7 @@ export default async function CreateTopic(sdfew, currentUser) {
       // mapGetModel(iase, koasdw);
     }
 
-    logs.logga("___searckno ADD TOPIC sdfokr ___", sdfokr);
+    bearlog.lug("___searckno ADD TOPIC sdfokr ___", sdfokr);
 
     // mapNoHook(sdfokr);
     actuCreateTop(sdfokr);

@@ -13,7 +13,7 @@
 //     // docvar: listios,
 //   };
 
-//   logs.logga(typevar + "___adModel___ AAA", dnsrew);
+//   bearlog.lug(typevar + "___adModel___ AAA", dnsrew);
 
 //   async function roase({ id, userID, wikiID, googleID, ...itemOjb }) {
 //     //
@@ -26,7 +26,7 @@
 //       EMPTY: checkEmp,
 //     };
 
-//     logs.logga("___ AddModFunc ITEM AAAA___", ijsadw);
+//     bearlog.lug("___ AddModFunc ITEM AAAA___", ijsadw);
 
 //     let saokew = removeEmptyDict({
 //       id: id,
@@ -66,7 +66,7 @@
 //       });
 
 //     function catchErr(defda) {
-//       logs.logga("___ FUREBASE ADD FAILURE ___", defda);
+//       bearlog.lug("___ FUREBASE ADD FAILURE ___", defda);
 
 //       // if (errorFunc) {
 //       //   // errorFuncdefda
@@ -85,7 +85,7 @@
 //         userObj: userObj,
 //       };
 
-//       logs.logga("___ ADD MODEL FUNC ADDED___", okasew);
+//       bearlog.lug("___ ADD MODEL FUNC ADDED___", okasew);
 
 //       if (sadkoe) {
 //         userFunc(afmewrew);
@@ -105,7 +105,7 @@
 //       errorFunc: catchErr,
 //     };
 
-//     logs.logga("___ adModel BBBB ___", ijdsferw);
+//     bearlog.lug("___ adModel BBBB ___", ijdsferw);
 
 //     // return await FaunaModel(ijdsferw);
 //     return await FireModel(ijdsferw);

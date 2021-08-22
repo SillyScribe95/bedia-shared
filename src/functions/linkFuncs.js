@@ -1,17 +1,81 @@
-export function turnDictLink(fdsger, extra = "") {
+import { getType } from "./globalFuncs";
+import * as bearlog from "./logFuncs";
+import { joinString } from "./stringFuncs";
+// import { checkType } from "./globalFuncs";
+
+export function openNewTab(linko) {
+  window.open(linko, "_blank");
+  // var window = window.open(url, windowN ame, [windowFeatures]);
+
+  // .focus();
+}
+
+export function getLinkParams() {
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const params = Object.fromEntries(urlSearchParams.entries());
+
+  for (const [key, value] of Object.entries(params)) {
+    if (!value) {
+      params[key] = true;
+    }
+  }
+
+  return params;
+}
+
+export function turnDictLink(asd, sbdfsg = {}) {
+  // bearlog.lug("turnDctLik---", ...asd);
+
+  return asdfker(asd, sbdfsg);
+}
+
+export function asdfker(
+  fdsger,
+  {
+    //
+    joinArray = ",",
+    extra = "&",
+  }
+) {
   let baseList = [];
   for (var key in fdsger) {
     let basei = fdsger[key];
+
     if (basei) {
-      let endio = key + "=" + encodeURIComponent(basei);
+      let endio;
+      switch (getType(basei)) {
+        case "boolean":
+          endio = "";
+          break;
+        case "array":
+          endio = codeit(joinString(basei, joinArray));
+          break;
+        default:
+          endio = codeit(basei);
+      }
+
+      function codeit(sdfwr) {
+        return "=" + encodeURIComponent(sdfwr);
+      }
+
+      bearlog.lug("JOINSTING--", { key, basei, endio });
+
+      endio = key + endio;
       baseList.push(endio);
     }
   }
 
-  extra = extra && extra + "?";
-  let enJoino = extra + baseList.join("&");
+  // extra = extra
+  let enJoino = "?" + baseList.join(extra);
 
   return enJoino;
+}
+
+export function buildLink(link, ...okeas) {
+  bearlog.lug("buildnk---", { link, okeas });
+  const nsidfjw = link + turnDictLink(...okeas);
+
+  return nsidfjw;
 }
 
 export function setParamVar(paramVar, stringVar, linkMain) {
@@ -24,7 +88,7 @@ export function setParamVar(paramVar, stringVar, linkMain) {
     linkvar: linkvar,
     paramVar: paramVar,
   };
-  logs.logga("setParamVar:---", ijsdaw);
+  bearlog.lug("setParamVar:---", ijsdaw);
 
   // const params = new URLSearchParams(location.search);
   // params.set('version', 2.0);
@@ -65,7 +129,7 @@ export function getParamVar(stringVar, linkMain) {
     checkIt: checkIt,
   };
 
-  logs.logga("___ getParamVar ___", ijaeweq);
+  bearlog.lug("___ getParamVar ___", ijaeweq);
 
   return checkIt;
 }
@@ -75,7 +139,7 @@ export function getParamVar(stringVar, linkMain) {
 // 1mapdict
 
 // for (const [key, value] of turnDict(test)) {
-//   logs.logga(key, value);
+//   bearlog.lug(key, value);
 // }
 
 export function modelLink(typevar, sadowqke, typeslu) {
@@ -107,7 +171,7 @@ export function parseQueryStringToDictionary(queryString) {
   var dictionary = {};
   queryString = document.location.search;
 
-  logs.logga("___ queryString ___", queryString);
+  bearlog.lug("___ queryString ___", queryString);
 
   // remove the '?' from the beginning of the
   // if it exists
@@ -118,8 +182,8 @@ export function parseQueryStringToDictionary(queryString) {
   // Step 1: separate out each key/value pair
   var parts = queryString.split("&");
 
-  logs.logga("___ queryString BBBB___", queryString);
-  logs.logga("___ parts ___", parts);
+  bearlog.lug("___ queryString BBBB___", queryString);
+  bearlog.lug("___ parts ___", parts);
 
   for (var i = 0; i < parts.length; i++) {
     var p = parts[i];

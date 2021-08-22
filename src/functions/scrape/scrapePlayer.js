@@ -1,5 +1,5 @@
 import { getPageInfo } from "..//scrapeFuncs";
-import * as logs from "../logFuncs";
+import * as bearlog from "../logFuncs";
 
 export function getCurrTime(player) {
   // if
@@ -11,7 +11,7 @@ export function getCurrTime(player) {
     endTime: endTime,
   };
 
-  logs.logga("___ getCurrTime ___", sdifkjer);
+  bearlog.lug("___ getCurrTime ___", sdifkjer);
 
   return endTime;
 }
@@ -43,7 +43,7 @@ export function getPlayVar(player) {
     // endTime: endTime,
   };
 
-  logs.logga("___ getPlayVar ___", sdifkjer);
+  bearlog.lug("___ getPlayVar ___", sdifkjer);
 
   // const audioTrue
 
@@ -59,5 +59,5 @@ export function getPlayVar(player) {
 //   // openNewTab();
 //   //   openBediaNew(oksdw);
 
-//   logs.logga("___ logs ___", oksdw);
+//   bearlog.lug("___ logs ___", oksdw);
 // }

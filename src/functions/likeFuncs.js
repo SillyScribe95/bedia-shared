@@ -26,7 +26,7 @@
 //     let objLikes = adfewrw.likes;
 //     let userLiked = objLikes?.oksaew;
 
-//     logs.logga("___ checkUseLiked BBbbb ___", {
+//     bearlog.lug("___ checkUseLiked BBbbb ___", {
 //       MAINOBJECT: adfewrw,
 //       objLikes: objLikes,
 //       userLiked: userLiked,

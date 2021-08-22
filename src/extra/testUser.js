@@ -7,7 +7,7 @@ export const testUser = {
 };
 
 function okreas(sdkas) {
-  console.log("___ logs.logga sdkas ___", sdkas);
+  console.log("___ bearlog.lug sdkas ___", sdkas);
 }
 
 export const uspopmodal = {

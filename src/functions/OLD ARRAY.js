@@ -1,5 +1,5 @@
 import { filter, isEmpty, remove } from "lodash";
-import * as logs from "./logFuncs";
+import * as bearlog from "./logFuncs";
 
 export function getFirstArr(dataVar) {
   dataVar = turnarray(dataVar)[0];
@@ -16,13 +16,13 @@ export function turnarray(arrVary, extraPush) {
 
   arrVary = arrVary ? (checkArr ? arrVary : emptArr) : [];
 
-  // logs.logga("arrVary-vvvv", arrVary, "vjjjjjvv");
+  // bearlog.lug("arrVary-vvvv", arrVary, "vjjjjjvv");
   if (extraPush) {
     arrVary.push(extraPush);
   }
 
-  //   logs.logga("arrVary-zzzzz", arrVary, "vjjjjjvv");
-  //   logs.logga("checkArr", checkArr, "vjjjjjvv");
+  //   bearlog.lug("arrVary-zzzzz", arrVary, "vjjjjjvv");
+  //   bearlog.lug("checkArr", checkArr, "vjjjjjvv");
 
   // arrVary = removeEmptyArray(arrVary);
 
@@ -41,7 +41,7 @@ export function mapFunc(arrVar, funcVar, limit) {
       ...obrar,
     };
 
-    logs.logga("___ ijadw ___", ijadw);
+    bearlog.lug("___ ijadw ___", ijadw);
 
     const vkbmdfs =
       //
@@ -94,7 +94,7 @@ export function getEnchancedArray(arrayeo, numVar = 0, endNum) {
       ...obj,
     };
 
-    logs.logga("___ geEnchas ITEM ___", ladsa);
+    bearlog.lug("___ geEnchas ITEM ___", ladsa);
 
     return ladsa;
   }
@@ -149,7 +149,7 @@ export function removeArray(array, obj, attr) {
       //
       attr ? currentObject[attr] != obj : currentObject != obj;
 
-    logs.logga("removArra - BASE FUNCTION", {
+    bearlog.lug("removArra - BASE FUNCTION", {
       obj: obj,
       attr: attr,
       currentObject: currentObject,
@@ -181,7 +181,7 @@ export function removeArray(array, obj, attr) {
     FINAL_obj: okdsasd,
   };
 
-  logs.logga("___ REMOVARRAY ___", oksadew);
+  bearlog.lug("___ REMOVARRAY ___", oksadew);
 
   return okdsasd;
 }
@@ -201,7 +201,7 @@ export function mapSelectEnd(odsfe, asdfer) {
     [odsfe]: mapValue(asdfer),
   };
 
-  logs.logga("___ sdore ___", sdore);
+  bearlog.lug("___ sdore ___", sdore);
 
   return sdore;
 }
@@ -243,7 +243,7 @@ export function mapInnerAttr(arrVar, attrVar) {
     aijdwq: aijdwq,
     enaso: enaso,
   };
-  // logs.logga("mapInnerAttr-zzz", aodjw);
+  // bearlog.lug("mapInnerAttr-zzz", aodjw);
 
   return enaso;
 }
@@ -266,7 +266,7 @@ export function removeArrayArray(arrBig, arrSmall, ...sawe) {
   //
   //
   function plusSpace(obj, indexvar) {
-    logs.logga("___ asdwqe ___", {
+    bearlog.lug("___ asdwqe ___", {
       indexvar: indexvar,
       obj: obj,
     });
@@ -275,7 +275,7 @@ export function removeArrayArray(arrBig, arrSmall, ...sawe) {
 
     arBiggo = checkFullArray(saase) ? [...arBiggo, ...saase] : arBiggo;
 
-    logs.logga("removArrFunc", {
+    bearlog.lug("removArrFunc", {
       ARR_ITEM: obj,
       ORIG_ARRAY: arBiggo,
       OBJECT: saase,
@@ -285,14 +285,14 @@ export function removeArrayArray(arrBig, arrSmall, ...sawe) {
     return arBiggo;
   }
 
-  logs.logga("___ removeArrayArray AAA ___", {
+  bearlog.lug("___ removeArrayArray AAA ___", {
     arrSmall: arrSmall,
     arrBig: arrBig,
   });
 
   const fullo = checkFullArray(arrSmall) ? arrSmall.map(plusSpace) : arrBig;
 
-  logs.logga("___ removeArrayArray bbbb ___", {
+  bearlog.lug("___ removeArrayArray bbbb ___", {
     arrSmall: arrSmall,
     fullo: fullo,
     arBiggo: arBiggo,
@@ -330,8 +330,8 @@ export function addRemoveArray(pushArr, obj, attrVar) {
   //   const dicto = findArrayTrue(pushArr, obj, attrVar);
   //   // const dicto = findArrayAttr(pushArr, obj, attrVar);
 
-  //   logs.logs.logga("pushArr-zzz", pushArr, "2193e1h2");
-  //   logs.logs.logga("dicto-zzz", dicto, "2193e1h2");
+  //   bearlog.bearlog.lug("pushArr-zzz", pushArr, "2193e1h2");
+  //   bearlog.bearlog.lug("dicto-zzz", dicto, "2193e1h2");
 
   //   if (dicto > -1) {
   //     _.remove(pushArr, function (el) {

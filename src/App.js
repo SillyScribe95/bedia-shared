@@ -12,7 +12,7 @@ function App() {
 
     const isjdfew = await getBookInfo(fuhgwer);
 
-    logs.logga("getBooks---", isjdfew);
+    bearlog.lug("getBooks---", isjdfew);
     //
   }
 

@@ -1,5 +1,5 @@
 import moment from "moment";
-import * as logs from "./logFuncs";
+import * as bearlog from "./logFuncs";
 
 export function durationParser(inputTime, formatType = "h[h] m[m]") {
   // finalForm = moment.duration(inputTime).format("h[hrs] m[min] s[sec]");
@@ -10,7 +10,7 @@ export function durationParser(inputTime, formatType = "h[h] m[m]") {
     formatType: formatType,
   };
 
-  logs.logga("___ ijge ___", ijge);
+  bearlog.lug("___ ijge ___", ijge);
 
   const timeDicto = {
     hms: "h:*mm:ss",
@@ -42,7 +42,7 @@ export function durationParser(inputTime, formatType = "h[h] m[m]") {
     finalForm: finalForm,
   };
 
-  logs.logga("___ cvlmbfddsf ___", cvlmbfddsf);
+  bearlog.lug("___ cvlmbfddsf ___", cvlmbfddsf);
 
   return finalForm;
 }

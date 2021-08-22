@@ -9,7 +9,7 @@ import {
 } from "./firebaseFuncs";
 // import { getFauna } from "./faunaFuncs";
 // import { GraphArgo } from "./graphFuncs";
-import * as logs from "./logFuncs";
+import * as bearlog from "./logFuncs";
 
 // import {
 //   removeEmptyDict,
@@ -38,7 +38,7 @@ export function editBase(typevar, idvar, tyope) {
     ...tyope,
   };
 
-  logs.logga("___ editBase ___", ijwsdf);
+  bearlog.lug("___ editBase ___", ijwsdf);
 
   return fireEdit(ijwsdf);
 }
@@ -48,7 +48,7 @@ export function GetUser(functrion) {
   //   //
   //   FireUser();
 
-  // logs.logga("___ GetUser ___", dfuew);
+  // bearlog.lug("___ GetUser ___", dfuew);
 
   return FireUser();
   // return fireRet(FireUser());
@@ -92,16 +92,16 @@ export function GetUserObjs(typeos, useos, saodkwe) {
 //     // POST: stripeos,
 //   };
 
-//   logs.logga("___ fetchBase ___", ijsvcbfdgfdad);
+//   bearlog.lug("___ fetchBase ___", ijsvcbfdgfdad);
 
 //   fetch(sijdwe, stripeos)
 //     .then(function (response) {
-//       logs.logga("___ response ___", response);
+//       bearlog.lug("___ response ___", response);
 
 //       return response.json();
 //     })
 //     .then(function (session) {
-//       logs.logga("___ session ___", session);
+//       bearlog.lug("___ session ___", session);
 
 //       if (funco) {
 //         funco(session);
@@ -109,14 +109,14 @@ export function GetUserObjs(typeos, useos, saodkwe) {
 //       // return asuhdwe;
 //     })
 //     .catch(function (error) {
-//       logs.logga("___ error ___", error);
+//       bearlog.lug("___ error ___", error);
 //       console.error("Error:", error);
 //     });
 // }
 
 export function filtMain(typevar, { messvar, logtrue, ...ijasw }) {
   if (logtrue) {
-    logs.logga(messvar + "___ fiMain ___", ijasw);
+    bearlog.lug(messvar + "___ fiMain ___", ijasw);
   }
 
   let ksde = {
@@ -139,7 +139,7 @@ export function filtModel(dfgewr, keyvar, valvar, asodwe) {
     ...asodwe,
   };
 
-  logs.logga("___ filtModel BASE ___", ijasw);
+  bearlog.lug("___ filtModel BASE ___", ijasw);
 
   return filtMain(dfgewr, ijasw);
 }
@@ -216,7 +216,7 @@ export function editModel(typevar, listvar, keyvar, valuevar, asodkwe) {
     ...asodkwe,
   };
 
-  logs.logga("___ editModel ___", ijwsdf);
+  bearlog.lug("___ editModel ___", ijwsdf);
 
   return fireEdit(ijwsdf);
 }

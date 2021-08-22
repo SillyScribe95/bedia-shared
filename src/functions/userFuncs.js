@@ -6,7 +6,7 @@ import {
   firesignoutFunc,
   FireUser,
 } from "./firebaseFuncs";
-import * as logs from "./logFuncs";
+import * as bearlog from "./logFuncs";
 import { getDocModel } from "./modelFuncs";
 import { indexUser } from "../consts/constMain";
 import { filtModelDocs, getDataBase } from "./backendFuncs";
@@ -32,7 +32,7 @@ export function userLogSign(useo, passo, qwewq) {
   //
 
   function dsife(aqewc) {
-    logs.logga("___ aqewc ___", aqewc);
+    bearlog.lug("___ aqewc ___", aqewc);
 
     userRegister(useo, passo, qwewq);
   }
@@ -57,13 +57,13 @@ export function addFuncsUse(isoa) {
     deets: usernoe,
   };
 
-  logs.logga("___ CREATING NEW USER ___", saidew);
+  bearlog.lug("___ CREATING NEW USER ___", saidew);
 
   const aisjdew = usernoe.id;
 
   function oskddwqe(kvcbgf) {
     //
-    logs.logga("___ CreateAdd ___", kvcbgf);
+    bearlog.lug("___ CreateAdd ___", kvcbgf);
   }
 
   // getDocModel(indexUser, aisjdew).set(usernoe);

@@ -1,11 +1,11 @@
 import { mapEmojiFace } from "./emojiFuncs";
 import { GetUserObjs } from "./backendFuncs";
-import * as logs from "./logFuncs";
+import * as bearlog from "./logFuncs";
 
 export function getUserPlaylists(user) {
   const naemiw = GetUserObjs("playlist", user);
 
-  logs.logga("___ getUserPlaylists ___", naemiw);
+  bearlog.lug("___ getUserPlaylists ___", naemiw);
 
   return naemiw;
 }

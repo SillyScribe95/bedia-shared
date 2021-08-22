@@ -1,12 +1,12 @@
 import { getPageInfo } from "./scrapeFuncs";
 import { getPlayVar } from "./scrape/scrapePlayer";
-import * as logs from "./logFuncs";
+import * as bearlog from "./logFuncs";
 
 export function getWebCurrentTime(player) {
   let playRo = getPlayVar();
   let timeos = playRo && playRo.currentTime;
 
-  logs.logga("___ getWbCurrentTime ___", {
+  bearlog.lug("___ getWbCurrentTime ___", {
     playRo: playRo,
     TIME: timeos,
   });
@@ -18,7 +18,7 @@ export function changeWebPlayerTime(timeo, playRef) {
   let playRo = playRef ? playRef : getPlayVar();
   let endTimeo = getWebCurrentTime() + timeo;
 
-  logs.logga("___ chanWebPlayerTime ___", {
+  bearlog.lug("___ chanWebPlayerTime ___", {
     playRo: playRo,
     TIME: endTimeo,
   });

@@ -1,5 +1,5 @@
 export function closeExtension(id = "my-extension-root") {
-  // logs.logga("___ CLOSING APP LOGIN___");
+  // bearlog.lug("___ CLOSING APP LOGIN___");
 
   const aaspo = document.getElementById(id);
   aaspo.style.display = "none";

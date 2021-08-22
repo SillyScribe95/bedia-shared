@@ -1,5 +1,5 @@
 import { listenParams } from "../scrapeFuncs";
-import * as logs from "../logFuncs";
+import * as bearlog from "../logFuncs";
 import { getPlayVar } from "./scrapePlayer";
 
 export default function getPageAttrs(docvar) {
@@ -17,8 +17,8 @@ export default function getPageAttrs(docvar) {
     urlMain: urlMain,
   };
 
-  logs.logga("___ sadkjwe ___", sadkjwe);
-  logs.logga("___ paramGet ___", ijsadw);
+  bearlog.lug("___ sadkjwe ___", sadkjwe);
+  bearlog.lug("___ paramGet ___", ijsadw);
 
   let linkID = "";
   let linkType = "";
@@ -47,7 +47,7 @@ export default function getPageAttrs(docvar) {
   // window.location.pathname;
   // getRegexURL(urlMain);
 
-  logs.logga("___ getPageParams ___", finalIa);
+  bearlog.lug("___ getPageParams ___", finalIa);
 
   let endROs = {
     linkType,

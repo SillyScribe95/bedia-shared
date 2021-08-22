@@ -10,7 +10,7 @@ export async function createModel(
   //
 
   function ijdeas(xvcbg) {
-    logs.logga(typeos + "___ createModel FUNCTION ___", {
+    bearlog.lug(typeos + "___ createModel FUNCTION ___", {
       TPYVAR: typeos,
       OBJ: xvcbg,
       funcvar: funcvar,

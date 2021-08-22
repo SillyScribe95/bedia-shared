@@ -1,5 +1,5 @@
 import { getNotionText } from "../notionFuncs";
-import * as logs from "../logFuncs";
+import * as bearlog from "../logFuncs";
 
 function getNotionHighMeta({ quote, emoji, name }) {
   const oksdase = {
@@ -32,7 +32,7 @@ export function saveHighNotion({ notion, userObj, obj }) {
     ...notisn,
   };
 
-  logs.logga("___ saveHighNotion ___", sfkjre);
+  bearlog.lug("___ saveHighNotion ___", sfkjre);
 
   //   notion.pages.create(notisn);
 

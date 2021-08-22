@@ -1,4 +1,4 @@
-import * as logs from "./logFuncs";
+import * as bearlog from "./logFuncs";
 
 export function fallbackCopyTextToClipboard(text) {
   var textArea = document.createElement("textarea");
@@ -16,9 +16,9 @@ export function fallbackCopyTextToClipboard(text) {
   try {
     var successful = document.execCommand("copy");
     var msg = successful ? "successful" : "unsuccessful";
-    logs.logga("Fallback: Copying text command was " + msg);
+    bearlog.lug("Fallback: Copying text command was " + msg);
   } catch (err) {
-    logs.logga("Fallback: Oops, unable to copy", err);
+    bearlog.lug("Fallback: Oops, unable to copy", err);
   }
 
   document.body.removeChild(textArea);
@@ -33,10 +33,10 @@ export function copyTextToClipboard(text) {
 
   navigator.clipboard.writeText(text).then(
     function () {
-      logs.logga("Async: Copying to clipbfaunfaaoard was successful!");
+      bearlog.lug("Async: Copying to clipbfaunfaaoard was successful!");
     },
     function (err) {
-      logs.logga("Async: Could not copy text: ", err);
+      bearlog.lug("Async: Could not copy text: ", err);
     }
   );
 }

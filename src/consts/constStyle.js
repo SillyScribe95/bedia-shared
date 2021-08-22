@@ -9,7 +9,7 @@ export function addOpacity(colorVar, opac) {
   opac = opac ? opac : "1";
   opac = "rgb(" + colorVar + ", " + opac + ")";
 
-  // logs.logga("xxx-opac", opac, "sdsi3");
+  // bearlog.lug("xxx-opac", opac, "sdsi3");
 
   return opac;
 }

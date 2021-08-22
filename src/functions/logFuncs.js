@@ -1,17 +1,16 @@
-// import * as logs from "../functions/logFuncs"
-
 import prettyFormat from "pretty-format";
 
-export function logga(messageIt, valY) {
-  // logs.logga(messageIt, valY);
+export function lug(...asw) {
+  // bearlog.lug(messageIt, valY);
+  // console.log("--luggo--", ...asw);
 }
 
-export function loggo(...asw) {
-  // console.log("loggo--", ...asw);
-  console.log("loggo--", ...asw);
+export function log(...asw) {
+  // console.log("loggo BASE-", ...asw);
+  console.log(" loggo --- ", ...asw);
   // baseLog(asw)
 
-  // logs.logga('logs.logga:', logs.logga)
+  // bearlog.lug('bearlog.lug:', bearlog.lug)
 }
 
 export function logCheck(name, first, ...asw) {
@@ -21,7 +20,7 @@ export function logCheck(name, first, ...asw) {
 
   //
   if (asuhw) {
-    loggo(...asw);
+    log(...asw);
   }
 }
 
@@ -33,7 +32,7 @@ function baseLog(o) {
     //
     arro || obkjo;
 
-  // console.log("loggo--aaaa", {
+  // console.log("log--aaaa", {
   //   o: o,
   //   doTable: doTable,
   // })
@@ -47,12 +46,12 @@ function baseLog(o) {
 }
 
 export function logge(...sdf) {
-  loggo(...sdf);
-  // logs.logga('logs.logga:', logs.logga)
+  log(...sdf);
+  // bearlog.lug('bearlog.lug:', bearlog.lug)
 }
 
 export function loggu(...sdf) {
-  // loggo(...sdf)
+  // log(...sdf)
 }
 
 export function logJSON(messageIt, valY, ...asw) {
@@ -61,22 +60,22 @@ export function logJSON(messageIt, valY, ...asw) {
     // JSON.stringify(valY)
     prettyFormat(valY);
 
-  console.log("loggo--", messageIt, sodase, ...asw);
-  // logs.logga('logs.logga:', logs.logga)
+  console.log("log--", messageIt, sodase, ...asw);
+  // bearlog.lug('bearlog.lug:', bearlog.lug)
 }
 
-//   export function logga(messageIt, valY) {
-//     logs.logga(messageIt, valY);
+//   export function lug(messageIt, valY) {
+//     bearlog.lug(messageIt, valY);
 //   }
 
 export function logLines(nubfd) {
   let saodkwe = "-";
   for (let i = 0; i < nubfd; i++) {
     saodkwe += "-";
-    loggo(saodkwe);
+    log(saodkwe);
   }
 }
 
 export function logLinas(...sdf) {
-  // loggo(...sdf)
+  // log(...sdf)
 }

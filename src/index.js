@@ -1,11 +1,11 @@
 // import {
 //     //
 //     logs,
-//  } from "bedia-shared";
+//  } from "bear-functions";
 
 // 1logs
-import * as logs from "./functions/logFuncs";
-export { logs };
+import * as bearlog from "./functions/logFuncs";
+export { bearlog };
 
 export * from "./functions/extensionFuncs";
 export * from "./functions/regexFuncs";

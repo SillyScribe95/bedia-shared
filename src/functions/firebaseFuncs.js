@@ -1,4 +1,4 @@
-import * as logs from "./logFuncs";
+import * as bearlog from "./logFuncs";
 import { ModelCatch } from "./modelFuncs";
 import { addFuncsUse, creatUseAfter } from "./userFuncs";
 import { getDataBase } from "./backendFuncs";
@@ -36,7 +36,7 @@ export function getFirestore() {
 function getAuth(fireObj) {
   let adwe = fireMain(fireObj).auth();
 
-  logs.logga(messo + "___ getAuth ___", adwe);
+  bearlog.lug(messo + "___ getAuth ___", adwe);
 
   return adwe;
 }
@@ -51,7 +51,7 @@ export function FireUser(fireObj) {
   // getAuth("userSign");
   // useAuthState(firebase.auth());
 
-  logs.logga("___fireUser fireObj ___", fireObj);
+  bearlog.lug("___fireUser fireObj ___", fireObj);
 
   const BaseRRue =
     //
@@ -85,7 +85,7 @@ export function FireUser(fireObj) {
   //   error: error,
   // };
 
-  logs.logga("___ FireUser ___", {
+  bearlog.lug("___ FireUser ___", {
     BASIC: BaseRRue,
     EXPAND: skmae,
   });
@@ -138,7 +138,7 @@ export function fireCreate(user, funceos) {
     NEW: usernew,
   };
 
-  logs.logga("firCreate ", seasew);
+  bearlog.lug("firCreate ", seasew);
 
   // set account  doc
   // const account = {
@@ -228,7 +228,7 @@ export async function fireEdit({
   //
   logtrue = "rew";
 
-  // logs.logga("___ dbMain ___", dbMain);
+  // bearlog.lug("___ dbMain ___", dbMain);
 
   function switchIt(sdfgre) {
     let endValue = valuevar;
@@ -240,7 +240,7 @@ export async function fireEdit({
         break;
     }
 
-    logs.logga("___ switchIt ___", {
+    bearlog.lug("___ switchIt ___", {
       sdfgre: sdfgre,
       endValue: endValue,
     });
@@ -264,7 +264,7 @@ export async function fireEdit({
     };
 
     if (logtrue) {
-      logs.logga("___ firdit: OBJECT BBB ___", {
+      bearlog.lug("___ firdit: OBJECT BBB ___", {
         object: osawe,
         keyvar: keyvar,
         attribute: jweqaw,
@@ -279,7 +279,7 @@ export async function fireEdit({
         osawe;
       // osawe.data();
 
-      logs.logga("___ aoskdwe ___", {
+      bearlog.lug("___ aoskdwe ___", {
         asdfo: asdfo,
         xvobker: xvobker,
         osawe: osawe,
@@ -339,7 +339,7 @@ export async function FireModel({
     // logtrue;
 
     if (osdkf) {
-      logs.logga(messvar + sdokfr, sdpkfew);
+      bearlog.lug(messvar + sdokfr, sdpkfew);
     }
   }
 
@@ -493,7 +493,7 @@ function getKeybase(zxcvf) {
 }
 
 function asokdwe(sdfoker) {
-  logs.logga("___ sdfoker ___", sdfoker);
+  bearlog.lug("___ sdfoker ___", sdfoker);
 
   let ew9r = sdfoker.get();
   let saod = {
@@ -558,7 +558,7 @@ export function getFire({
     limitvar: limitvar,
   };
 
-  logs.logga(messvar + "___ gFIre AAAA ___", saidwqe);
+  bearlog.lug(messvar + "___ gFIre AAAA ___", saidwqe);
 
   const sdiewqeq = storeObj ? storeObj : getFirestore();
   let sfdgre = sdiewqeq.collection(typevar);
@@ -570,7 +570,7 @@ export function getFire({
         key: key,
         value: value,
       };
-      logs.logga("filtWhere--zz", osakd);
+      bearlog.lug("filtWhere--zz", osakd);
 
       xcasdwv = xcasdwv.where(key, "==", value);
     }
@@ -580,7 +580,7 @@ export function getFire({
 
   function mainGo() {
     if (logtrue) {
-      logs.logga(messvar + "___ geIre collection ___", saidwqe);
+      bearlog.lug(messvar + "___ geIre collection ___", saidwqe);
     }
 
     let refMod = docvar ? sfdgre.doc(docvar) : sfdgre;
@@ -623,7 +623,7 @@ export function getFire({
       addTrue: addTrue,
       truFind: truFind,
     };
-    logs.logga(messvar + "___ gFIre ANY AND ADD IF NOT ___", osakdw);
+    bearlog.lug(messvar + "___ gFIre ANY AND ADD IF NOT ___", osakdw);
   }
 
   if (truFind) {
@@ -632,7 +632,7 @@ export function getFire({
   }
 
   if (logtrue) {
-    logs.logga(messvar + "___ gFIre BBBBB ___", dsaors);
+    bearlog.lug(messvar + "___ gFIre BBBBB ___", dsaors);
   }
 
   return dsaors;

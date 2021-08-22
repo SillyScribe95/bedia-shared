@@ -1,5 +1,5 @@
 // import { getRegexURL } from "./globalFunc";
-import * as logs from "../functions/logFuncs";
+import * as bearlog from "../functions/logFuncs";
 import { getFirstArr, mapArrFunc, removeEmptyArray } from "./arrayFuncs";
 
 // import { getCurrTime } from "./playerFuncs";
@@ -30,11 +30,11 @@ export function getPageInfo(queryvar, idvar) {
     idvar: idvar,
   };
 
-  logs.logga("___ getPageInfo BASE ___", fghjkgf);
+  bearlog.lug("___ getPageInfo BASE ___", fghjkgf);
 
   firstInfo = atti ? firstInfo.getAttribute(idvar) : firstInfo;
 
-  logs.logga("___ getPageInfo ATTR ___", fghjkgf);
+  bearlog.lug("___ getPageInfo ATTR ___", fghjkgf);
 
   return firstInfo;
 }
@@ -69,7 +69,7 @@ export function getPageParams(docvar) {
   let logtrue = "";
 
   if (logtrue) {
-    logs.logge("getPagParams-initalLink", docvar);
+    bearlog.lugge("getPagParams-initalLink", docvar);
   }
   let dfigjreit =
     //
@@ -131,8 +131,8 @@ export function getPageParams(docvar) {
   };
 
   if (logtrue) {
-    logs.logge("___ getPagParams BASIC INFOR ___", ijsadw);
-    logs.logge("___ getPagPrams ___", finalIa);
+    bearlog.lugge("___ getPagParams BASIC INFOR ___", ijsadw);
+    bearlog.lugge("___ getPagPrams ___", finalIa);
   }
 
   let endROs = {
@@ -153,7 +153,7 @@ export function mainFuncs(params) {
   // openNewTab();
   // openBediaNew(oksdw);
 
-  logs.logga("___ logs ___", oksdw);
+  bearlog.lug("___ logs ___", oksdw);
 }
 
 // 1path 1link
@@ -171,7 +171,7 @@ export function getURLDict(dfigjreit = window.location.href) {
   const checkhtp = dfigjreit.includes(okdaew);
   dfigjreit = checkhtp ? dfigjreit : okdaew + dfigjreit;
 
-  logs.logga("getURLDict--AAA", dfigjreit);
+  bearlog.lug("getURLDict--AAA", dfigjreit);
 
   let sadkjwe =
     //
@@ -189,7 +189,7 @@ export function getURLDict(dfigjreit = window.location.href) {
     // convios: convios,
   };
 
-  logs.logga("___ getURDict aaa ___", kasew);
+  bearlog.lug("___ getURDict aaa ___", kasew);
 
   return sadkjwe;
 }
@@ -209,17 +209,17 @@ export function findClassDoc(asdwsd, asdwe) {
 export function insertClassDoc(asdwsd, cvbij) {
   const jsdfew = findClassDoc(asdwsd);
 
-  logs.logga("___ insertClassDoc ___", jsdfew);
+  bearlog.lug("___ insertClassDoc ___", jsdfew);
 
   if (jsdfew) {
-    logs.logga("___ insertClassDoc FOUND ___");
+    bearlog.lug("___ insertClassDoc FOUND ___");
 
     setTimeout(function () {
-      logs.logga("___ input FOCUS ___");
+      bearlog.lug("___ input FOCUS ___");
       jsdfew.focus();
     }, 0);
 
-    logs.logga("___ document.execCommand paste ___");
+    bearlog.lug("___ document.execCommand paste ___");
     document.execCommand("paste");
 
     // CLEAR INPUT
@@ -234,12 +234,12 @@ export function insertClassDoc(asdwsd, cvbij) {
     jsdfew.replaceChildren(cvbij);
   }
 
-  logs.logga("___ insertClassDoc END___", jsdfew);
+  bearlog.lug("___ insertClassDoc END___", jsdfew);
 
   //
   //
   function setto(sdfer, VALUE) {
-    logs.logga(sdfer, "___ setto ___", VALUE);
+    bearlog.lug(sdfer, "___ setto ___", VALUE);
 
     jsdfew[sdfer] = VALUE;
     jsdfew.setAttribute(sdfer, VALUE);
@@ -250,7 +250,7 @@ export function findTagInner(arro, funcvar, attvar) {
   let xcvkds = mapArrFunc(arro, funcvar);
   const dfijer = getTagText(xcvkds);
 
-  logs.logga("___ findTagInner ___", { xcvkds, dfijer });
+  bearlog.lug("___ findTagInner ___", { xcvkds, dfijer });
 
   return dfijer;
   // return jsdfew;

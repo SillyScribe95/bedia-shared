@@ -1,4 +1,4 @@
-import * as logs from "./logFuncs";
+import * as bearlog from "./logFuncs";
 /*global chrome*/
 
 export function getLocalChrome(item, funcvar) {
@@ -39,7 +39,7 @@ export function getLocal(identVar) {
   const trueAll = trueProd ? JSON.parse(trueProd) : "";
   const sadokawe = trueAll && trueAll.data;
 
-  // logs.logga("___ cxvksf ___", cxvksf);
+  // bearlog.lug("___ cxvksf ___", cxvksf);
 
   return sadokawe;
 }
@@ -57,7 +57,7 @@ export function setLocal(stringVar, identVar) {
 
   const itmget = localStorage.getItem(stringVar);
 
-  logs.logga("___ localStorage ___", {
+  bearlog.lug("___ localStorage ___", {
     stringVar,
     obVar,
     localStorage,

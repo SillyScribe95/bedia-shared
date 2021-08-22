@@ -1,4 +1,4 @@
-// import * as logs from "./logFuncs";
+// import * as bearlog from "./logFuncs";
 
 // var faunadb = require("faunadb"),
 //   q = faunadb.query;
@@ -14,7 +14,7 @@
 //     ...data,
 //   };
 
-//   logs.logga("___ renderFauna AAA ___", {
+//   bearlog.lug("___ renderFauna AAA ___", {
 //     DATA: data,
 //     OTHER: asdwe,
 //   });
@@ -29,7 +29,7 @@
 
 //   const itemCre = q.Create(q.Ref(dsfdas), { data: addArgs });
 
-//   logs.logga("___ createFauna", {
+//   bearlog.lug("___ createFauna", {
 //     serverClient: serverClient,
 //     itemCre: itemCre,
 //   });
@@ -55,7 +55,7 @@
 //   //     ...kosade?.data
 //   // }
 
-//   // logs.logga("getFauna--", sdewq)
+//   // bearlog.lug("getFauna--", sdewq)
 //   // return ""
 //   return serverClient.query(kosade);
 //   // return faunBase(sdewq)
@@ -104,7 +104,7 @@
 //     // iwqesa = q.Paginate(iwqesa)
 //     // iwqesa = q.Select(["ref"], iwqesa)
 
-//     logs.logga("quersKey ", {
+//     bearlog.lug("quersKey ", {
 //       KEYVAR: okae,
 //       VALUEVAR: valuevar,
 //       FINAL: iwqesa,
@@ -156,7 +156,7 @@
 
 //   const truFind = addTrue && !dsaors;
 
-//   logs.logga(messvar + "___ fauna ANY ___", {
+//   bearlog.lug(messvar + "___ fauna ANY ___", {
 //     dsaors: dsaors,
 //     addTrue: addTrue,
 //     truFind: truFind,
@@ -189,7 +189,7 @@
 
 //   function idjeq(sdokfr, sdpkfew) {
 //     if (logtrue) {
-//       logs.logga(messvar + sdokfr, sdpkfew);
+//       bearlog.lug(messvar + sdokfr, sdpkfew);
 //     }
 //   }
 

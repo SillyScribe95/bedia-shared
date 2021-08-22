@@ -1,5 +1,6 @@
-import { turnarray } from "./arrayFuncs";
-import * as logs from "./logFuncs";
+import { maplisttostring, turnarray } from "./arrayFuncs";
+import { getType } from "./globalFuncs";
+import * as bearlog from "./logFuncs";
 import { joinString } from "./stringFuncs";
 
 export function turnDict(dictvar) {
@@ -44,6 +45,30 @@ export function checkDict(dictvar, cxzvd) {
   return asdrae;
 }
 
+// 1attr
+export function getDictvalues(dict, attr = "value") {
+  let obj = {};
+  for (const [key, value] of Object.entries(dict)) {
+    let inVal = "";
+    const sderase = getType(value);
+    bearlog.lug("getDictvalues TYPEODF-zzz", { value, sderase });
+
+    switch (sderase) {
+      case "array":
+        inVal = value.map((sdofr) => sdofr[attr]);
+        break;
+      case "object":
+        inVal = value[attr];
+        break;
+      default:
+        inVal = value;
+    }
+    obj[key] = inVal;
+  }
+
+  return obj;
+}
+
 export function mapDictAttr(obj, dictvar) {
   for (const [key, value] of Object.entries(dictvar)) {
     obj[key] = value;
@@ -65,34 +90,8 @@ export function mapDictNew(dictvar, nqeo) {
   return iase;
 }
 
-export function mapDictAttrToString(listvar, join, dictvar) {
-  //
-  function sigjt(dfigjtr) {
-    const ijfge = typeof dfigjtr == "string";
-    const bifdre = ijfge ? dfigjtr : "";
-
-    logs.logga("___ mapDictAttrToString ___", { dfigjtr, ijfge, bifdre });
-
-    return bifdre;
-  }
-  
-  function sidjfer(asda) {
-    const dfigjtr = dictvar && dictvar[asda];
-
-    return turnarray(dfigjtr).map(sigjt);
-  }
-
-  const okasasd = listvar.map(sidjfer);
-  const ofkew = joinString(okasasd, join);
-
-  logs.logga("___ mapDictAttrToString ___", {
-    ATTR_LIST: listvar,
-    DICT: dictvar,
-    ARRAY: okasasd,
-    JOINED: ofkew,
-  });
-
-  return ofkew;
+export function mapDictAttrToString(...zxcv) {
+  return maplisttostring(...zxcv);
 }
 
 export function removeEmptyDict(obj) {
@@ -171,12 +170,12 @@ export function mapDictKeyToValue(dict, attr) {
 export function createNewDictFromAttr(arrvar, attr) {
   var oksae = {};
   arrvar.map(function (wewq) {
-    logs.logga("___ createNewDictFromAttr aaaa ___", oksae);
+    bearlog.lug("___ createNewDictFromAttr aaaa ___", oksae);
     oksae[wewq[attr]] = wewq;
-    logs.logga("___ createNewDictFromAttr BBBB ___", oksae);
+    bearlog.lug("___ createNewDictFromAttr BBBB ___", oksae);
   });
 
-  logs.logga("___ createNewDictFromAttr END ___", oksae);
+  bearlog.lug("___ createNewDictFromAttr END ___", oksae);
 
   return oksae;
 }
@@ -193,7 +192,7 @@ export function convertObjectDict(obj) {
       okdsa: okdsa,
     };
 
-    logs.logga("___ convertObjDict ORIG ___", ijadew);
+    bearlog.lug("___ convertObjDict ORIG ___", ijadew);
 
     return okdsa;
   }
@@ -209,7 +208,7 @@ export function convertObjectDict(obj) {
     FINAL: oaksde,
   };
 
-  logs.logga("___ convertObjectDict ___", oaskdew);
+  bearlog.lug("___ convertObjectDict ___", oaskdew);
 
   //   aodks
   return oaksde;

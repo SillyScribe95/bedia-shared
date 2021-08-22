@@ -3,15 +3,15 @@ export async function getMediaLink({ link, name }) {
 
   const osdker = getExtString(link);
 
-  // logs.logga("getExtString", osdker);
+  // bearlog.lug("getExtString", osdker);
 
   switch (osdker) {
     case "pdf":
-      // logs.logga("FOUND_PDF", osdker);
+      // bearlog.lug("FOUND_PDF", osdker);
       extInfo = await getBookInfo(name);
       break;
     //   default:
-    //     // logs.logga("FOUND_DEFAULT", osdker);
+    //     // bearlog.lug("FOUND_DEFAULT", osdker);
     //     extInfo = getVidInfo(link);
   }
 

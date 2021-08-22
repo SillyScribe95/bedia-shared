@@ -1,11 +1,11 @@
 // import { modelSubmit } from "../modelFuncs";
-// import * as logs from "../logFuncs";
+// import * as bearlog from "../logFuncs";
 
 // // 1adduser 1saveuser
 // export function SaveUser(currentUser, typeos, listvar, endFunc) {
 //   //
 //   function asewq(asdfe) {
-//     logs.logga("___ saveUser AFTER  ___", asdfe);
+//     bearlog.lug("___ saveUser AFTER  ___", asdfe);
 
 //     if (endFunc) {
 //       endFunc(asdfe);
@@ -18,7 +18,7 @@
 //     funcvar: asewq,
 //   };
 
-//   logs.logga(typeos + "___ saveUser ___", ijsde);
+//   bearlog.lug(typeos + "___ saveUser ___", ijsde);
 
 //   function asew9() {
 //     modelSubmit(typeos, listvar, ijsde);
