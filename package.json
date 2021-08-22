@@ -1,11 +1,11 @@
 {
-  "name": "bear-functions",
+  "name": "@sillyscribe95/bear-functions",
   "version": "0.1.0",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
   "source": "src/index.js",
   "files": [
-    "./build"
+    "build"
   ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -22,9 +22,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "prepublishOnly": "npm run build",
     "start": "npm-run-all --parallel build-watch",
-    "build": "rollup -c -w",
-    "build-watch": "rollup -c -w",
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
     "start-playground": "cd playground && npm run start",
     "i-all": "npm i && cd playground && npm i",
     "play": "npm-run-all --parallel build-watch",
