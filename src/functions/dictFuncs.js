@@ -69,9 +69,12 @@ export function getDictvalues(dict, attr = "value") {
   return obj;
 }
 
-export function mapDictAttr(obj, dictvar) {
+export function mapDictAttr(obj, dictvar, attr = "") {
   for (const [key, value] of Object.entries(dictvar)) {
-    obj[key] = value;
+    if (key) {
+      const ksdfe = attr ? value[attr] : value;
+      obj[key] = ksdfe;
+    }
   }
 
   return obj;

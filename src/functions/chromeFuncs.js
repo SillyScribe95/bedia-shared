@@ -44,6 +44,10 @@ export function getLocal(identVar) {
   return sadokawe;
 }
 
+export function deleteLocal(stringVar) {
+  localStorage.removeItem(stringVar);
+}
+
 export function setLocal(stringVar, identVar) {
   const dateFirst = new Date();
   // const dateo = dateFirst.getTime();
@@ -64,6 +68,6 @@ export function setLocal(stringVar, identVar) {
     itmget,
   });
 
-  localStorage.removeItem(stringVar);
+  deleteLocal(stringVar);
   localStorage.setItem(stringVar, obVar);
 }

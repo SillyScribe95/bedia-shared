@@ -300,6 +300,19 @@ export function mapDictMain(listo, dicto) {
   const asokew = mapFunc();
 }
 
+// 1dict maparrdict maparratt
+export function maparrtodict(array, att = "") {
+  let ofkaw = {};
+  const asokew = array.map(function (sdfwer) {
+    let oskfdw = sdfwer[att];
+    if (oskfdw) {
+      ofkaw[oskfdw] = sdfwer;
+    }
+  });
+
+  return ofkaw;
+}
+
 export function mapInnerJoin(arrVar, attrVar, connectVar) {
   var prevSpeak = "";
   connectVar = connectVar ? connectVar : " ";

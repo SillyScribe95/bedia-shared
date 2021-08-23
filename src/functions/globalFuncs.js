@@ -10,11 +10,19 @@ export function slugFunc(sdrsdfe, asdok = "") {
   return iuhiij;
 }
 
-export function getType(sdrsdfe) {
-  let arrtrue = Array.isArray(sdrsdfe);
-  const getto = arrtrue ? "array" : typeof sdrsdfe;
+export function getMinMax(min, max) {
+  min = parseFloat(min);
+  max = parseFloat(max);
 
-  return getto;
+  const overit = max <= min;
+
+  max = overit ? null : max;
+
+  return { min, max };
+}
+
+export function getType(...sdrsdfe) {
+  return checkType(...sdrsdfe);
 }
 
 // 1random
@@ -29,7 +37,7 @@ export function getSlugName(sdrsdfe) {
 }
 
 export function checkType(obb, typeo) {
-  let sdfiewr = Array.isArray(sdrsdfe) ? "array" : typeof obb;
+  let sdfiewr = Array.isArray(obb) ? "array" : typeof obb;
 
   return typeo ? sdfiewr == typeo : sdfiewr;
 }
