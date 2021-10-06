@@ -189,15 +189,7 @@ export function getLength(arr) {
   return arr;
 }
 
-export function removeItemArray(...asdf) {
-  return removeArray(...asdf);
-}
-
-export function removeArray(array, obj, attr) {
-  //   _.remove(obj.subTopics, {
-  //     subTopicId: stToDelete
-  // });
-
+export function removeItemArray(array, obj, attr) {
   function baseRem(currentObject) {
     let asweas =
       //
@@ -213,7 +205,24 @@ export function removeArray(array, obj, attr) {
     return asweas;
   }
 
-  let okdsasd = filter(array, baseRem);
+  const oksadew = {
+    array: array,
+    obj: obj,
+    attr: attr,
+    FINAL_obj: okdsasd,
+  };
+
+  bearlog.lug("___ REMOVARRAY ___", oksadew);
+
+  return removeArray(array, baseRem);
+}
+
+export function removeArray(array, func) {
+  //   _.remove(obj.subTopics, {
+  //     subTopicId: stToDelete
+  // });
+
+  let okdsasd = filter(array, func);
 
   // remove(
 
@@ -227,15 +236,6 @@ export function removeArray(array, obj, attr) {
   // if (index > -1) {
   //   array.splice(index, 1);
   // }t
-
-  const oksadew = {
-    array: array,
-    obj: obj,
-    attr: attr,
-    FINAL_obj: okdsasd,
-  };
-
-  bearlog.lug("___ REMOVARRAY ___", oksadew);
 
   return okdsasd;
 }

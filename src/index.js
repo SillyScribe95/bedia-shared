@@ -10,6 +10,8 @@ export { bearlog };
 export * from "./functions/extensionFuncs";
 export * from "./functions/regexFuncs";
 export * from "./functions/arrayFuncs";
+export * from "./functions/sortFuncs";
+export * from "./functions/filterFuncs";
 export * from "./functions/dictFuncs";
 export * from "./functions/lengthFuncs";
 export * from "./functions/linkFuncs";
